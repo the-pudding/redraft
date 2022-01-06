@@ -32,3 +32,7 @@
   --color-highlight: var(--color-yellow);
 	
 }
+
+table td:nth-of-type(even) {
+	background: #eee;
+}
