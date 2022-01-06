@@ -17,6 +17,7 @@ specifiers:
   style-dictionary: ^3.1.1
   svelte: ^3.44.3
   svelte-preprocess: ^4.10.1
+  svelte-table: ^0.3.2
   vite-plugin-svgstring: ^1.0.0
 
 devDependencies:
@@ -36,6 +37,7 @@ devDependencies:
   style-dictionary: 3.1.1
   svelte: 3.44.3
   svelte-preprocess: 4.10.1_postcss@8.4.5+svelte@3.44.3
+  svelte-table: 0.3.2
   vite-plugin-svgstring: 1.0.0
 
 packages:
@@ -1256,6 +1258,10 @@ packages:
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 3.44.3
+    dev: true
+
+  /svelte-table/0.3.2:
+    resolution: {integrity: sha512-fcJ1VRrKD25QFA1PTPazPgUm/7hKDI0y8HjaLSps2S4/oc9fi8ZxYKYo4MWa7gVHE0HQiZqQcqsKnrxHr90TJQ==}
     dev: true
 
   /svelte/3.44.3:
