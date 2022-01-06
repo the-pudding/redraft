@@ -1,48 +1,68 @@
 <script>
-  import { mean, format } from "d3";
+  import { groups, mean, descending } from "d3";
   import SvelteTable from "svelte-table";
   import Footer from "$components/Footer.svelte";
-  import data from "$data/redraft.csv";
+  import data from "$data/redrafted.csv";
 
+  const NO_VAL = -99;
+  const MINS = 1000;
   const stats = ["VORP", "WS", "WA", "RWAR"];
+
   // id,name,year,pick,team,seasons,games,minutes,VORP,WS,PIPM,WA,VORP_top,WS_top,PIPM_top,WA_top,redraft_VORP,redraft_WS,redraft_PIPM,redraft_WA,redraft_VORP_top,redraft_WS_top,redraft_PIPM_top,redraft_WA_top,redraft_blend,redraft_blend_top
-  const clean = data
-    .map((d) => ({
-      name: d.name,
-      year: +d.year,
-      team: d.team,
-      pick: +d.pick,
-      // VORP: +d.VORP,
-      // WS: +d.WS,
-      // PIPM: +d.PIPM,
-      // WA: +d.WA,
-      // VORP_top: +d.VORP_top,
-      // WS_top: +d.WS_top,
-      // PIPM_top: +d.PIPM_top,
-      // WA_top: +d.WA_top,
-      _VORP: +d.redraft_VORP,
-      _WS: +d.redraft_WS,
-      _WA: +d.redraft_WA,
-      _RWAR: +d.redraft_RWAR,
-      _VORP_top: +d.redraft_VORP_top,
-      _WS_top: +d.redraft_WS_top,
-      _WA_top: +d.redraft_WA_top,
-      _RWAR_top: +d.redraft_RWAR
-    }))
-    .map((d) => ({
-      ...d,
-      _blend: +format(".2f")(mean(stats.map((v) => d[`_${v}`]))),
-      _blend_top: +format(".2f")(mean(stats.map((v) => d[`_${v}_top`])))
-    }));
 
-  clean.sort((a, b) => a.pick - b.pick);
+  const clean = data.map((d) => ({
+    name: d.name,
+    minutes: +d.minutes,
+    year: +d.year,
+    team: d.team,
+    pick: +d.pick,
+    VORP: +d.minutes >= MINS ? +d.VORP : NO_VAL,
+    WS: +d.minutes >= MINS ? +d.WS : NO_VAL,
+    WA: +d.minutes >= MINS ? +d.WA : NO_VAL,
+    RWAR: +d.minutes >= MINS ? +d.RWAR : NO_VAL,
+    VORP_top: +d.minutes >= MINS ? +d.VORP_top : NO_VAL,
+    WS_top: +d.minutes >= MINS ? +d.WS_top : NO_VAL,
+    WA_top: +d.minutes >= MINS ? +d.WA_top : NO_VAL,
+    RWAR_top: +d.minutes >= MINS ? +d.RWAR_top : NO_VAL
+  }));
 
-  const rows = clean;
-  const years = [...new Set(clean.map((d) => d.year))];
+  stats.forEach((stat) => {
+    const seasons = groups(clean, (d) => d.year);
+    seasons.forEach(([year, players]) => {
+      players.sort((a, b) => descending(a[`${stat}`], b[`${stat}`]));
+      players.forEach((p, i) => {
+        p[`#_${stat}`] = i + 1;
+      });
+
+      players.sort((a, b) => descending(a[`${stat}_top`], b[`${stat}_top`]));
+      players.forEach((p, i) => {
+        p[`#_${stat}_top`] = i + 1;
+      });
+    });
+  });
+
+  const rows = clean.map((d) => ({
+    ...d,
+    blend: +mean(stats.map((v) => d[`#_${v}`])).toFixed(2),
+    blend_top: +mean(stats.map((v) => d[`#_${v}_top`])).toFixed(2)
+  }));
+
+  rows.sort((a, b) => a.pick - b.pick);
+
+  const years = [...new Set(rows.map((d) => d.year))];
   years.sort((a, b) => a - b);
   let selection = { year: years[0] };
 
-  const columns = Object.keys(clean[0]).map((d) => ({
+  const columns = [
+    "name",
+    "year",
+    "pick",
+    "#_VORP_top",
+    "#_WS_top",
+    "#_WA_top",
+    "#_RWAR_top",
+    "blend_top"
+  ].map((d) => ({
     key: d,
     title: d,
     value: (v) => v[d],
