@@ -32,7 +32,7 @@
     .map((d) => ({
       ...d,
       _blend: +format(".2f")(mean(stats.map((v) => d[`_${v}`]))),
-      _blend_top: +format(".2f")(mean(stats.map((v) => d[`_${v}`])))
+      _blend_top: +format(".2f")(mean(stats.map((v) => d[`_${v}_top`])))
     }));
 
   clean.sort((a, b) => a.pick - b.pick);
