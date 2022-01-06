@@ -51,6 +51,15 @@
   }));
 </script>
 
+<ul>
+  <li><strong>VORP</strong>: Value Over Replacement Player</li>
+  <li><strong>WS</strong>: Win Shares</li>
+  <li><strong>WA</strong>: Wins Added</li>
+  <li><strong>RWAR</strong>: RAPTOR Wins Above Replacement</li>
+  <li><strong>blend</strong>: mean rank of all four stats draft orders</li>
+  <li><strong>top</strong>: using top 5 seasons instead of all</li>
+</ul>
+
 <SvelteTable {columns} {rows} bind:filterSelections={selection} />
 
 <!-- <Footer /> -->
