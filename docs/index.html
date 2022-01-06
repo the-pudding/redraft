@@ -10,13 +10,13 @@
 		<link rel="stylesheet" href="/redraft/_app/assets/vendor-11530600.css">
 		<link rel="stylesheet" href="/redraft/_app/assets/pages/__layout.svelte-9cc8ca8e.css">
 		<link rel="stylesheet" href="/redraft/_app/assets/pages/index.svelte-5b00c943.css">
-		<link rel="modulepreload" href="/redraft/_app/start-19efce36.js">
-		<link rel="modulepreload" href="/redraft/_app/chunks/vendor-dd2fddf1.js">
-		<link rel="modulepreload" href="/redraft/_app/pages/__layout.svelte-6a4a317d.js">
-		<link rel="modulepreload" href="/redraft/_app/pages/index.svelte-3ecfe972.js">
+		<link rel="modulepreload" href="/redraft/_app/start-966004e6.js">
+		<link rel="modulepreload" href="/redraft/_app/chunks/vendor-7d023f5f.js">
+		<link rel="modulepreload" href="/redraft/_app/pages/__layout.svelte-18578e3c.js">
+		<link rel="modulepreload" href="/redraft/_app/pages/index.svelte-e88028ec.js">
 
 		<script type="module">
-			import { start } from "/redraft/_app/start-19efce36.js";
+			import { start } from "/redraft/_app/start-966004e6.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/redraft","assets":"/redraft"},
@@ -28,8 +28,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/redraft/_app/pages/__layout.svelte-6a4a317d.js"),
-						import("/redraft/_app/pages/index.svelte-3ecfe972.js")
+						import("/redraft/_app/pages/__layout.svelte-18578e3c.js"),
+						import("/redraft/_app/pages/index.svelte-e88028ec.js")
 					],
 					url: new URL("http://prerender/"),
 					params: {}
@@ -50,11 +50,15 @@
   <li><strong>WS</strong>: Win Shares</li>
   <li><strong>WA</strong>: Wins Added</li>
   <li><strong>RWAR</strong>: RAPTOR Wins Above Replacement</li>
-  <li><strong>blend</strong>: mean rank of all four stats draft orders</li>
+  <li><strong>mix</strong>: mean rank of all four stats draft orders</li>
   <li><strong>top</strong>: using top 5 seasons instead of all</li></ul>
 
 <table class=" svelte-1i6qrct"><thead class=" svelte-1i6qrct"><tr class="svelte-1i6qrct"><th>
           </th><th><select class=" svelte-1i6qrct"><option></option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option></select>
+          </th><th>
+          </th><th>
+          </th><th>
+          </th><th>
           </th><th>
           </th><th>
           </th><th>
@@ -70,6 +74,14 @@
             
           </th><th class="isSortable svelte-1i6qrct">pick
             
+          </th><th class="isSortable svelte-1i6qrct">VORP_top
+            
+          </th><th class="isSortable svelte-1i6qrct">WS_top
+            
+          </th><th class="isSortable svelte-1i6qrct">WA_top
+            
+          </th><th class="isSortable svelte-1i6qrct">RWAR_top
+            
           </th><th class="isSortable svelte-1i6qrct">#_VORP_top
             
           </th><th class="isSortable svelte-1i6qrct">#_WS_top
@@ -78,7 +90,7 @@
             
           </th><th class="isSortable svelte-1i6qrct">#_RWAR_top
             
-          </th><th class="isSortable svelte-1i6qrct">blend_top
+          </th><th class="isSortable svelte-1i6qrct">#_mixed
             
           </th>
         </tr>
@@ -88,11 +100,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Pervis Ellison<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->5.6<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->19.2<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->18.24<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->11.47<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->13<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->16<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14.25<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -100,11 +116,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Danny Ferry<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->5.3<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->22.7<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->13.54<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->12.03<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->15<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->11<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->15<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->15<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->13<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -112,6 +132,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Sean Elliott<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->3<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->11.3<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->39.7<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->31.43<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->29.56<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->9<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->7<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->8<!-- HTML_TAG_END -->
@@ -124,11 +148,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Glen Rice<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->4<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->16.4<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->49.3<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->41.99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->43.61<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->4<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->3<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->6<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->3<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->4<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->3<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -136,7 +164,11 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->J.R. Reid<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->5<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->21<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14.9<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->4.85<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.82<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->20<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->18<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->20<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->21<!-- HTML_TAG_END -->
@@ -148,11 +180,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Stacey King<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->6<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->33<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.9<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->11<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.42<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-1<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->32<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->21<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->24<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->31<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->27.25<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->27<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -160,11 +196,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->George McCloud<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->7<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->5.8<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->18.7<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->11.95<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->16.08<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->13<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->15<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->17<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->13<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->15<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -172,11 +212,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Randy White<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->8<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-4<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.9<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.08<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-1.86<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->34<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->28<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->30<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->34<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->31.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->33<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -184,11 +228,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Tom Hammonds<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->9<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.3<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->10.7<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.56<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.71<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->26<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->22<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->23<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->29<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->25<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->24<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -196,6 +244,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Pooh Richardson<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->10<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->10.2<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->22.2<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->23.07<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->26.98<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->10<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->13<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->11<!-- HTML_TAG_END -->
@@ -208,6 +260,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Nick Anderson<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->11<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->16.9<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->36.3<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->44.64<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->42.71<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->3<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->8<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->5<!-- HTML_TAG_END -->
@@ -220,11 +276,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Mookie Blaylock<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->12<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->27.1<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->48.1<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->73.99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->69.12<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->4<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.75<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -232,6 +292,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Michael Smith<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->13<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.4<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.3<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.13<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.67<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->27<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->30<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->31<!-- HTML_TAG_END -->
@@ -244,6 +308,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Tim Hardaway<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->25<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->51.2<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->70.72<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->62.73<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->
@@ -256,11 +324,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Todd Lichti<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->15<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->5.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.04<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->28<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->25<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->26<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->24<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->25.75<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->25<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -268,11 +340,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Dana Barros<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->16<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->12.9<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->32.2<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->24.31<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->28.54<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->8<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->10<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->10<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->9<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->9.25<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->9<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -280,6 +356,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Shawn Kemp<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->17<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14.8<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->52.6<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->62.28<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->39.43<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->7<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->3<!-- HTML_TAG_END -->
@@ -292,11 +372,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->B.J. Armstrong<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->18<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->7.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->34.7<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->24.66<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->19.53<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->12<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->9<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->9<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->12<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->10.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->10<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -304,11 +388,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Kenny Payne<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->19<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->32<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.9<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.1<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.19<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-1.34<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->33<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->34<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->32<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->33<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->32.75<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->34<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -316,6 +404,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Jeff Sanders<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->20<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->35<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->35<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->35<!-- HTML_TAG_END -->
@@ -328,11 +420,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Blue Edwards<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->21<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->3.3<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->18.7<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->13.63<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->13.15<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->16<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->16<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->15<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->16<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -340,6 +436,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Byron Irvin<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->22<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->36<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->36<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->36<!-- HTML_TAG_END -->
@@ -352,6 +452,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Roy Marble<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->23<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->37<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->37<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->37<!-- HTML_TAG_END -->
@@ -364,11 +468,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Anthony Cook<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->24<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.1<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.1<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.7<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.13<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->25<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->31<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->28<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->26<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->27.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->28<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -376,11 +484,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->John Morton<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->25<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.26<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->29<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->33<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->29<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->27<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->29.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->30<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -388,11 +500,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Vlade Divac<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->26<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->16.1<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->39.9<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->54.24<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->36.87<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->5<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->6<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->4<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->7<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->5.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->6<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -400,6 +516,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Kenny Battle<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->27<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.8<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->3.6<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.29<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.48<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->19<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->26<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->25<!-- HTML_TAG_END -->
@@ -412,11 +532,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Sherman Douglas<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->28<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->8.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->22.6<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->20.99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->20.3<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->11<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->12<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->12<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->11<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->11.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->12<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -424,6 +548,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Dyron Nix<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->29<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->38<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->38<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->38<!-- HTML_TAG_END -->
@@ -436,6 +564,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Frank Kornet<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->30<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->39<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->39<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->39<!-- HTML_TAG_END -->
@@ -448,6 +580,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Jeff Martin<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->31<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.8<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->2.2<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-1.01<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-1.1<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->31<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->27<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->34<!-- HTML_TAG_END -->
@@ -460,6 +596,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Stanley Brundy<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->32<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->40<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->40<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->40<!-- HTML_TAG_END -->
@@ -472,6 +612,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Jay Edwards<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->33<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->41<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->41<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->41<!-- HTML_TAG_END -->
@@ -484,6 +628,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Gary Leonard<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->34<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->42<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->42<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->42<!-- HTML_TAG_END -->
@@ -496,6 +644,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Pat Durham<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->35<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->43<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->43<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->43<!-- HTML_TAG_END -->
@@ -508,11 +660,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Clifford Robinson<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->36<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->15.1<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->40.9<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->40.2<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->37.03<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->6<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->5<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->7<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->6<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->6<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->7<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -520,11 +676,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Michael Ansley<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->37<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->20<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->6.4<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->2.41<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->4.05<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->21<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->24<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->22<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->20<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->21.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->21<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -532,11 +692,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Doug West<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->38<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->15<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->5.49<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->5.98<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->22<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->17<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->19<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->19<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->19.25<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->19<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -544,6 +708,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Ed Horton<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->39<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->44<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->44<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->44<!-- HTML_TAG_END -->
@@ -556,11 +724,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Dino Radja<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->40<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->3<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->14.2<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->13.24<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->6.26<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->17<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->19<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->16<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->18<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->17.5<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->17<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -568,6 +740,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Doug Roth<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->41<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->45<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->45<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->45<!-- HTML_TAG_END -->
@@ -580,6 +756,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Michael Cutright<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->42<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->46<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->46<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->46<!-- HTML_TAG_END -->
@@ -592,11 +772,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Chucky Brown<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->43<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.3<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->12.3<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->4.05<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.06<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->23<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->20<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->21<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->23<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->21.75<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->22<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -604,6 +788,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Reggie Cross<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->44<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->47<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->47<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->47<!-- HTML_TAG_END -->
@@ -616,6 +804,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Scott Haffner<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->45<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->48<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->48<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->48<!-- HTML_TAG_END -->
@@ -628,6 +820,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Ricky Blanton<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->46<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->49<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->49<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->49<!-- HTML_TAG_END -->
@@ -640,6 +836,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Reggie Turner<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->47<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->50<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->50<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->50<!-- HTML_TAG_END -->
@@ -652,6 +852,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Junie Lewis<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->48<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->51<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->51<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->51<!-- HTML_TAG_END -->
@@ -664,11 +868,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Haywoode Workman<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->49<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->2.4<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->10.2<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->10.09<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->9.63<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->18<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->23<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->18<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->17<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->19<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->18<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -676,11 +884,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Brian Quinnett<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->50<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.6<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.8<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.34<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-0.96<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->30<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->32<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->33<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->30<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->31.25<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->32<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -688,6 +900,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Mike Morrison<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->51<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->52<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->52<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->52<!-- HTML_TAG_END -->
@@ -700,11 +916,15 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Greg Grant<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->52<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1.6<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.95<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->0.9<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->24<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->29<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->27<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->25<!-- HTML_TAG_END -->
-            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->26.25<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->26<!-- HTML_TAG_END -->
             </td>
           </tr>
         
@@ -712,6 +932,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Jeff Hodge<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->53<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->53<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->53<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->53<!-- HTML_TAG_END -->
@@ -724,6 +948,10 @@
         <tr class=" svelte-1i6qrct"><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->Toney Mack<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->1989<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->54<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
+            </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->-99<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->54<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->54<!-- HTML_TAG_END -->
             </td><td class=" svelte-1i6qrct"><!-- HTML_TAG_START -->54<!-- HTML_TAG_END -->
