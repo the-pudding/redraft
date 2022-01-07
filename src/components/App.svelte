@@ -3,10 +3,12 @@
   import Table from "$components/Table.svelte";
   import Could from "$components/Could.svelte";
   import Histogram from "$components/Histogram.svelte";
+  import Teams from "$components/Teams.svelte";
   // import Footer from "$components/Footer.svelte";
   import data from "$data/clean.js";
 </script>
 
+<Teams {data} />
 <Histogram {data} />
 <Could {data} />
 <Scatter data={data.filter((d) => d.minutes >= 1000)} />
