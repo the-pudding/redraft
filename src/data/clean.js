@@ -7,11 +7,21 @@ const stats = ["VORP", "WS", "WA", "RWAR"];
 
 // id,name,year,pick,team,seasons,games,minutes,VORP,WS,PIPM,WA,VORP_top,WS_top,PIPM_top,WA_top,redraft_VORP,redraft_WS,redraft_PIPM,redraft_WA,redraft_VORP_top,redraft_WS_top,redraft_PIPM_top,redraft_WA_top,redraft_blend,redraft_blend_top
 
+const swapTeam = (t) => {
+	if (["NOK", "NOH"].includes(t)) return "NOP";
+	if (["CHO", "CHH"].includes(t)) return "CHA";
+	if (t === "VAN") return "MEM";
+	if (t === "WSB") return "WAS";
+	if (t === "NJN") return "BRK";
+	if (t === "SEA") return "OKC";
+	return t;
+};
+
 const clean = data.map((d) => ({
 	name: d.name,
 	minutes: +d.minutes,
 	year: +d.year,
-	team: d.team,
+	team: swapTeam(d.team),
 	pick: +d.pick,
 	VORP: +d.minutes >= MINS ? +d.VORP : NO_VAL,
 	WS: +d.minutes >= MINS ? +d.WS : NO_VAL,
@@ -51,7 +61,7 @@ seasonsB.forEach(([year, players]) => {
 	players.sort((a, b) => ascending(+a.mixed_top, +b.mixed_top) || ascending(a.pick, b.pick));
 	players.forEach((p, i) => {
 		p[`#_mixed`] = i + 1;
-		p.mixed_moved = p[`#_mixed`] - p.pick;
+		p.mixed_moved = p.pick - p[`#_mixed`];
 	});
 
 });
