@@ -10,8 +10,8 @@
   let graphicEl;
   let activeYear;
   let figureW = 0;
-  const yProp = "mixed_moved";
-  const xProp = "WS_top";
+  const yProp = "moved";
+  const xProp = "norm_blend";
 
   const extentX = extent(data, (d) => d[xProp]);
   const extentY = extent(data, (d) => d[yProp]);

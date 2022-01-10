@@ -6,7 +6,7 @@
   const teams = grouped.map(([abbr, players]) => ({
     abbr,
     players,
-    avg: mean(players.map((d) => d.mixed_moved))
+    avg: mean(players.map((d) => d.blend_moved))
   }));
 
   const x = scaleLinear()

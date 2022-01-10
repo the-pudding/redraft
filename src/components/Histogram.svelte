@@ -2,13 +2,15 @@
   import { group, groups, ascending, descending } from "d3";
   export let data;
 
+  const metric = "moved";
+
   const getBin = (d) => {
     if (d <= -20) return -20;
     if (d <= -10) return -10;
-    if (d <= -5) return -5;
+    // if (d <= -5) return -5;
     if (d >= 20) return 20;
     if (d >= 10) return 10;
-    if (d >= 5) return 5;
+    // if (d >= 5) return 5;
     return 0;
   };
 
@@ -16,7 +18,7 @@
     .filter((d) => d.minutes >= 0)
     .map((d) => ({
       ...d,
-      bin: getBin(d.mixed_moved)
+      bin: getBin(d[metric])
     }));
 
   const drafts = groups(
@@ -25,21 +27,17 @@
     (d) => d.bin
   );
 
-  // Array.from(drafts).forEach(([year]) => {
-  //   const players = drafts.get(year);
-  //   players.sort((a, b) => ascending(a.mixed_move, b.mixed_move));
-  // });
-
   drafts.sort((a, b) => ascending(a[0], b[0]));
   drafts.forEach(([year, bins]) => {
     bins.sort((a, b) => ascending(a[0], b[0]));
     // hack TODO
-    if (bins.length < 7) bins.unshift([-20, []]);
+    if (bins.length < 5) bins.unshift([-20, []]);
   });
 </script>
 
 <section>
   <h1>Busts and Steals kind of</h1>
+  <p>Showing players with minutes > 1000 or that moved 10+ spots in redraft</p>
   <div class="drafts">
     {#each drafts as [year, bins]}
       <div class="draft">
@@ -59,6 +57,10 @@
 </section>
 
 <style>
+  section {
+    padding: 1em;
+  }
+
   .draft {
     margin-bottom: 4em;
   }
@@ -104,23 +106,23 @@
     color: #922;
   }
 
-  .bin:nth-of-type(3) {
+  /* .bin:nth-of-type(3) {
     color: #700;
-  }
+  } */
 
-  .bin:nth-of-type(4) {
+  .bin:nth-of-type(3) {
     color: #555;
   }
 
-  .bin:nth-of-type(5) {
+  /* .bin:nth-of-type(5) {
     color: #070;
-  }
+  } */
 
-  .bin:nth-of-type(6) {
+  .bin:nth-of-type(4) {
     color: #292;
   }
 
-  .bin:nth-of-type(7) {
+  .bin:nth-of-type(5) {
     color: #4a4;
   }
 
@@ -132,42 +134,42 @@
     content: "⬇️ 10+ spots";
   }
 
-  .bin:nth-of-type(3):before {
+  /* .bin:nth-of-type(3):before {
     content: "⬇️ 5+ spots";
+  } */
+
+  .bin:nth-of-type(3):before {
+    content: "+/- 10 spots";
   }
+
+  /* .bin:nth-of-type(5):before {
+    content: "⬆️ 5+ spots";
+  } */
 
   .bin:nth-of-type(4):before {
-    content: "+/- 5 spots";
-  }
-
-  .bin:nth-of-type(5):before {
-    content: "⬆️ 5+ spots";
-  }
-
-  .bin:nth-of-type(6):before {
     content: "⬆️ 10+ spots";
   }
 
-  .bin:nth-of-type(7):before {
+  .bin:nth-of-type(5):before {
     content: "⬆️ 20+ spots";
   }
 
   .bin:nth-of-type(1),
-  .bin:nth-of-type(7) {
-    font-size: 16px;
+  .bin:nth-of-type(5) {
+    font-size: 20px;
   }
 
   .bin:nth-of-type(2),
-  .bin:nth-of-type(6) {
-    font-size: 14px;
-  }
-
-  .bin:nth-of-type(3),
-  .bin:nth-of-type(5) {
-    font-size: 12px;
-  }
-
   .bin:nth-of-type(4) {
+    font-size: 15px;
+  }
+  /* 
+  .bin:nth-of-type(3),
+  .bin:nth-of-type(3) {
+    font-size: 12px;
+  } */
+
+  .bin:nth-of-type(3) {
     font-size: 10px;
   }
 </style>

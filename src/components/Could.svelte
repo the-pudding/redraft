@@ -1,7 +1,7 @@
 <script>
   import { group, groups, ascending, descending } from "d3";
   export let data;
-  export let metric = "mixed";
+  export let metric = "norm_blend";
 
   const drafts = group(data, (d) => d.year);
   Array.from(drafts).forEach(([year]) => {
@@ -11,7 +11,8 @@
 
   const getUpgrade = (p) => {
     const players = drafts.get(p.year);
-    const match = players.find((u) => u.pick > p.pick && u[metric] < p[metric]);
+    players.sort((a, b) => descending(a[metric], b[metric]));
+    const match = players.find((other) => other.pick > p.pick && other[metric] > p[metric]);
     return match;
   };
 
@@ -23,16 +24,12 @@
   const groupedTeams = groups(upgrades, (d) => d.team);
   const teams = groupedTeams.map(([abbr, all]) => {
     const clean = all.filter((p) => p.upgrade);
-    // .map((p) => ({
-    //   ...p,
-    //   upgrade_delta: p[`#_${metric}`] - p.upgrade[`#_${metric}`]
-    // }));
+    const top10 = clean.filter((p) => p.pick < 11);
+    // const top30 = clean.filter((p) => p.pick < 30 && p.pick > 10);
+    top10.sort((a, b) => descending(a.upgrade[metric] - a[metric], b.upgrade[metric] - b[metric]));
+    // top30.sort((a, b) => descending(a.upgrade[metric] - a[metric], b.upgrade[metric] - b[metric]));
 
-    // clean.sort((a, b) => ascending(a.upgrade[`#_${metric}`], b.upgrade[`#_${metric}`]));
-    // clean.sort((a, b) => descending(a[`#_${metric}`] - a.pick, b[`#_${metric}`] - b.pick));
-    clean.sort((a, b) => ascending(a.pick, b.pick));
-
-    const players = clean.slice(0, 10);
+    const players = top10.slice(0, 5);
     return {
       abbr,
       players
@@ -48,8 +45,10 @@
     {#each teams as { abbr, players }}
       <div class="team">
         <h2>{abbr}</h2>
-        {#each players as { pick, name, upgrade, upgrade_delta }}
-          <p>#{pick} {name} could've been {upgrade.name}</p>
+        {#each players as { pick, norm_blend, name, upgrade }}
+          <p>
+            #{pick} ({norm_blend}) {name} could've been {upgrade.name} #{upgrade.pick} ({upgrade.norm_blend})
+          </p>
         {/each}
       </div>
     {/each}
@@ -63,7 +62,7 @@
   }
 
   .team {
-    width: 33em;
+    width: 50em;
     padding: 0 1em;
   }
 </style>

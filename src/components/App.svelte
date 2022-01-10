@@ -6,10 +6,13 @@
   import Teams from "$components/Teams.svelte";
   // import Footer from "$components/Footer.svelte";
   import data from "$data/clean.js";
+
+  // console.table(data.filter((d) => d.year === 1994));
+  const MIN = 1000;
 </script>
 
-<Histogram {data} />
 <Could {data} />
-<Teams {data} />
-<Scatter data={data.filter((d) => d.minutes >= 1000)} />
-<Table rows={data} />
+<!-- <Histogram {data} /> -->
+<!-- <Teams {data} /> -->
+<!-- <Scatter data={data} /> -->
+<!-- <Table rows={data} /> -->
