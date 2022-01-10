@@ -8,8 +8,8 @@
   import data from "$data/clean.js";
 </script>
 
-<Teams {data} />
 <Histogram {data} />
 <Could {data} />
+<Teams {data} />
 <Scatter data={data.filter((d) => d.minutes >= 1000)} />
 <Table rows={data} />
