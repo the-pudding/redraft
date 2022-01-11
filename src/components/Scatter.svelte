@@ -16,8 +16,8 @@
   const extentX = extent(data, (d) => d[xProp]);
   const extentY = extent(data, (d) => d[yProp]);
 
-  $: w = Math.min(figureW, $viewport.width) * 0.9;
-  $: h = Math.min(figureW, $viewport.height) * 0.9;
+  $: w = Math.min(figureW, $viewport.width) * 0.8;
+  $: h = Math.min(figureW, $viewport.height) * 0.8;
   $: x = scaleLinear().domain(extentX).range([0, 100]);
   $: y = scaleLinear().domain([-extentY[1], extentY[1]]).range([100, 0]);
   $: xTicks = x.ticks(w < 400 ? 4 : 8);
@@ -70,7 +70,9 @@
             <div
               style="width: {8 + Math.abs(p[yProp])}px; height: {8 + Math.abs(p[yProp])}px;"
               class="dot"
-            />
+            >
+              <!-- <img src="assets/headshots/{p.id}.png" alt="" /> -->
+            </div>
             <p class="name">{p.name}</p>
           </div>
         {/each}
@@ -159,8 +161,14 @@
     height: 0.25em;
     background: var(--color-gray-light);
     border-radius: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(50%, -50%);
     pointer-events: none;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
   }
 
   .name {
@@ -286,7 +294,7 @@
     top: 50%;
     right: 0;
     height: 1px;
-    transform: translate(100%, 0);
+    transform: translate(100%, -100%);
     border-bottom: 1px dashed var(--color-gray-light);
   }
 

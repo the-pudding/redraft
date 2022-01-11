@@ -2,11 +2,19 @@
   import { extent, scaleLinear, mean, group, groups, ascending, descending } from "d3";
   export let data;
 
+  const averages = groups(data, (d) => d.pick).map(([pick, players]) => ({
+    pick,
+    avg: mean(players, (d) => d.moved)
+  }));
+
   const grouped = groups(data, (d) => d.team);
   const teams = grouped.map(([abbr, players]) => ({
     abbr,
     players,
-    avg: mean(players.map((d) => d.blend_moved))
+    pick: mean(players.map((d) => d.pick)),
+    rank_blend: mean(players.map((d) => d.rank_blend)),
+    moved: mean(players.map((d) => d.moved)),
+    avg: mean(players.map((d) => d.moved - averages.find((v) => v.pick === d.pick).avg))
   }));
 
   const x = scaleLinear()
@@ -16,13 +24,11 @@
   teams.sort((a, b) => descending(a.avg, b.avg));
 </script>
 
-<h1>Average spots moved for all picks</h1>
+<h1>Average spots moved compared to each pick average</h1>
 <figure>
-  {#each teams as { abbr, players, avg }}
-    <div class="row">
-      <div class="team" style="margin-left: {x(avg)}%">
-        <p>{abbr} ({avg.toFixed(1)})</p>
-      </div>
+  {#each teams as { abbr, players, pick, moved, rank_blend, avg }}
+    <div class="team" style="margin-left: {x(avg)}%;">
+      <p>{abbr} ({avg.toFixed(1)})</p>
     </div>
   {/each}
 </figure>
@@ -35,14 +41,13 @@
     margin: 0 auto;
   }
 
-  .row {
-    position: relative;
+  .team {
   }
 
   p {
-    margin: 0.25em 0;
+    margin: 2px 0;
     display: inline-block;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -50%);
     white-space: nowrap;
     background: var(--color-off-black);
     color: var(--color-white);

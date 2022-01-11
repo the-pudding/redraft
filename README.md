@@ -1,5 +1,8 @@
 # Svelte Starter
 
+## Story Notes
+* Replace the minus dashes when moving over new data files
+
 This [starter template](https://github.com/the-pudding/svelte-starter) aims to quickly scaffold a [SvelteKit](https://kit.svelte.dev/) project, designed around data-driven, visual stories at [The Pudding](https://pudding.cool).
 
 ### Notes

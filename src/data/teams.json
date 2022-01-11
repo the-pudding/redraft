@@ -1,0 +1,271 @@
+[
+	{
+		"longitude": -71.062228,
+		"stadium": "TD Garden",
+		"latitude": 42.366303,
+		"name": "Boston Celtics",
+		"abbr": "BOS",
+		"state": "Massachusetts",
+		"id": 1
+	},
+	{
+		"longitude": -87.918167,
+		"stadium": "Fiserv Forum",
+		"latitude": 43.045028,
+		"name": "Milwaukee Bucks",
+		"abbr": "MIL",
+		"state": "Wisconsin",
+		"id": 10
+	},
+	{
+		"longitude": -84.396389,
+		"stadium": "Philips Arena",
+		"latitude": 33.757222,
+		"name": "Atlanta Hawks",
+		"abbr": "ATL",
+		"state": "Georgia",
+		"id": 11
+	},
+	{
+		"longitude": -80.839167,
+		"stadium": "Time Warner Cable Arena",
+		"latitude": 35.225,
+		"name": "Charlotte Bobcats",
+		"abbr": "CHA",
+		"state": "North Carolina",
+		"id": 12
+	},
+	{
+		"longitude": -80.188056,
+		"stadium": "American Airlines Arena",
+		"latitude": 25.781389,
+		"name": "Miami Heat",
+		"abbr": "MIA",
+		"state": "Florida",
+		"id": 13
+	},
+	{
+		"longitude": -81.383963,
+		"stadium": "Amway Center",
+		"latitude": 28.539338,
+		"name": "Orlando Magic",
+		"abbr": "ORL",
+		"state": "Florida",
+		"id": 14
+	},
+	{
+		"longitude": -77.020833,
+		"stadium": "Verizon Center",
+		"latitude": 38.898056,
+		"name": "Washington Wizards",
+		"abbr": "WAS",
+		"state": "Washington DC",
+		"id": 15
+	},
+	{
+		"longitude": -105.0075,
+		"stadium": "Pepsi Center",
+		"latitude": 39.748611,
+		"name": "Denver Nuggets",
+		"abbr": "DEN",
+		"state": "Colorado",
+		"id": 16
+	},
+	{
+		"longitude": -93.276111,
+		"stadium": "Target Center",
+		"latitude": 44.979444,
+		"name": "Minnesota Timberwolves",
+		"abbr": "MIN",
+		"state": "Minnesota",
+		"id": 17
+	},
+	{
+		"longitude": -122.666667,
+		"stadium": "Rose Garden",
+		"latitude": 45.531667,
+		"name": "Portland Trail Blazers",
+		"abbr": "POR",
+		"state": "Oregon",
+		"id": 18
+	},
+	{
+		"longitude": -97.515,
+		"stadium": "Oklahoma City Arena",
+		"latitude": 35.463333,
+		"name": "Oklahoma City Thunder",
+		"abbr": "OKC",
+		"state": "Oklahoma",
+		"id": 19
+	},
+	{
+		"longitude": -73.9754156,
+		"stadium": "Barclays Center",
+		"latitude": 40.6826465,
+		"name": "Brooklyn Nets",
+		"abbr": "BRK",
+		"state": "New York",
+		"id": 2
+	},
+	{
+		"longitude": -111.901111,
+		"stadium": "EnergySolutions Arena",
+		"latitude": 40.768333,
+		"name": "Utah Jazz",
+		"abbr": "UTA",
+		"state": "Utah",
+		"id": 20
+	},
+	{
+		"longitude": -122.3875,
+		"stadium": "Chase Center",
+		"latitude": 37.768056,
+		"name": "Golden State Warriors",
+		"abbr": "GSW",
+		"state": "California",
+		"id": 21
+	},
+	{
+		"longitude": -118.267222,
+		"stadium": "Staples Center",
+		"latitude": 34.043056,
+		"name": "Los Angeles Clippers",
+		"abbr": "LAC",
+		"state": "California",
+		"id": 22
+	},
+	{
+		"longitude": -118.267222,
+		"stadium": "Staples Center",
+		"latitude": 34.043056,
+		"name": "Los Angeles Lakers",
+		"abbr": "LAL",
+		"state": "California",
+		"id": 23
+	},
+	{
+		"longitude": -112.071389,
+		"stadium": "US Airways Center",
+		"latitude": 33.445833,
+		"name": "Phoenix Suns",
+		"abbr": "PHO",
+		"state": "Arizona",
+		"id": 24
+	},
+	{
+		"longitude": -121.499611,
+		"stadium": "Golden 1 Center",
+		"latitude": 38.580361,
+		"name": "Sacramento Kings",
+		"abbr": "SAC",
+		"state": "California",
+		"id": 25
+	},
+	{
+		"longitude": -96.810278,
+		"stadium": "American Airlines Center",
+		"latitude": 32.790556,
+		"name": "Dallas Mavericks",
+		"abbr": "DAL",
+		"state": "Texas",
+		"id": 26
+	},
+	{
+		"longitude": -95.362222,
+		"stadium": "Toyota Center",
+		"latitude": 29.750833,
+		"name": "Houston Rockets",
+		"abbr": "HOU",
+		"state": "Texas",
+		"id": 27
+	},
+	{
+		"longitude": -90.050556,
+		"stadium": "FedExForum",
+		"latitude": 35.138333,
+		"name": "Memphis Grizzlies",
+		"abbr": "MEM",
+		"state": "Tennessee",
+		"id": 28
+	},
+	{
+		"longitude": -90.081944,
+		"stadium": "New Orleans Arena",
+		"latitude": 29.948889,
+		"name": "New Orleans Pelicans",
+		"abbr": "NOP",
+		"id": 29
+	},
+	{
+		"longitude": -73.993611,
+		"stadium": "Madison Square Garden",
+		"latitude": 40.750556,
+		"name": "New York Knicks",
+		"abbr": "NYK",
+		"state": "New York",
+		"id": 3
+	},
+	{
+		"longitude": -98.4375,
+		"stadium": "AT&T Center",
+		"latitude": 29.426944,
+		"name": "San Antonio Spurs",
+		"abbr": "SAS",
+		"state": "Texas",
+		"id": 30
+	},
+	{
+		"longitude": -75.171944,
+		"stadium": "Wells Fargo Center",
+		"latitude": 39.901111,
+		"name": "Philadelphia 76ers",
+		"abbr": "PHI",
+		"state": "Pennsylvania",
+		"id": 4
+	},
+	{
+		"longitude": -79.379167,
+		"stadium": "Air Canada Centre",
+		"latitude": 43.643333,
+		"name": "Toronto Raptors",
+		"abbr": "TOR",
+		"state": "Ontario",
+		"id": 5
+	},
+	{
+		"longitude": -87.674167,
+		"stadium": "United Center",
+		"latitude": 41.880556,
+		"name": "Chicago Bulls",
+		"abbr": "CHI",
+		"state": "Illinois",
+		"id": 6
+	},
+	{
+		"longitude": -81.688056,
+		"stadium": "Quicken Loans Arena",
+		"latitude": 41.496389,
+		"name": "Cleveland Cavaliers",
+		"abbr": "CLE",
+		"state": "Ohio",
+		"id": 7
+	},
+	{
+		"longitude": -83.055,
+		"stadium": "Little Caesars Arena",
+		"latitude": 42.341111,
+		"name": "Detroit Pistons",
+		"abbr": "DET",
+		"state": "Michigan",
+		"id": 8
+	},
+	{
+		"longitude": -86.155556,
+		"stadium": "Conseco Fieldhouse",
+		"latitude": 39.763889,
+		"name": "Indiana Pacers",
+		"abbr": "IND",
+		"state": "Indiana",
+		"id": 9
+	}
+]
