@@ -16,14 +16,14 @@
   const MIN = 1000;
   let location;
   let selectedTeam = {};
-  let teamName = writable();
-  let teamAbbr = writable();
+  let teamData = writable({});
 
   $: fan = location ? getFandom(location) : {};
-  $: $teamName = selectedTeam.name ? selectedTeam.name : fan.name;
-  $: $teamAbbr = selectedTeam.abbr ? selectedTeam.abbr : fan.abbr;
-  $: context = { teamName, teamAbbr };
-  $: setContext("Team", context);
+  $: $teamData.name = selectedTeam.name ? selectedTeam.name : fan.name;
+  $: $teamData.abbr = selectedTeam.abbr ? selectedTeam.abbr : fan.abbr;
+  $: $teamData.city = selectedTeam.city ? selectedTeam.city : fan.city;
+  $: context = { teamData };
+  $: setContext("App", context);
 
   onMount(async () => {
     try {
@@ -40,7 +40,9 @@
   <p>Not your jam? Try another: <TeamSelect bind:team={selectedTeam} /></p>
 {/if}
 
-<Could {data} />
+{#if $teamData.abbr}
+  <Could {data} />
+{/if}
 <!-- <Teams {data} /> -->
 <!-- <Scatter {data} /> -->
 <!-- <Histogram {data} /> -->

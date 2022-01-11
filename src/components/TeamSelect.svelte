@@ -7,6 +7,7 @@
   $: match = teams.find((t) => t.abbr === value) || {};
   $: team.name = match.name;
   $: team.abbr = match.abbr;
+  $: team.city = match.city;
 </script>
 
 <select bind:value>

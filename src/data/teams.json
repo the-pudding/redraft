@@ -4,6 +4,7 @@
 		"stadium": "TD Garden",
 		"latitude": 42.366303,
 		"name": "Boston Celtics",
+		"city": "Boston",
 		"abbr": "BOS",
 		"state": "Massachusetts",
 		"id": 1
@@ -13,6 +14,7 @@
 		"stadium": "Fiserv Forum",
 		"latitude": 43.045028,
 		"name": "Milwaukee Bucks",
+		"city": "Milwaukee",
 		"abbr": "MIL",
 		"state": "Wisconsin",
 		"id": 10
@@ -22,6 +24,7 @@
 		"stadium": "Philips Arena",
 		"latitude": 33.757222,
 		"name": "Atlanta Hawks",
+		"city": "Atlanta",
 		"abbr": "ATL",
 		"state": "Georgia",
 		"id": 11
@@ -31,6 +34,7 @@
 		"stadium": "Time Warner Cable Arena",
 		"latitude": 35.225,
 		"name": "Charlotte Bobcats",
+		"city": "Charlotte",
 		"abbr": "CHA",
 		"state": "North Carolina",
 		"id": 12
@@ -40,6 +44,7 @@
 		"stadium": "American Airlines Arena",
 		"latitude": 25.781389,
 		"name": "Miami Heat",
+		"city": "Miami",
 		"abbr": "MIA",
 		"state": "Florida",
 		"id": 13
@@ -49,6 +54,7 @@
 		"stadium": "Amway Center",
 		"latitude": 28.539338,
 		"name": "Orlando Magic",
+		"city": "Orlando",
 		"abbr": "ORL",
 		"state": "Florida",
 		"id": 14
@@ -58,6 +64,7 @@
 		"stadium": "Verizon Center",
 		"latitude": 38.898056,
 		"name": "Washington Wizards",
+		"city": "Washington",
 		"abbr": "WAS",
 		"state": "Washington DC",
 		"id": 15
@@ -67,6 +74,7 @@
 		"stadium": "Pepsi Center",
 		"latitude": 39.748611,
 		"name": "Denver Nuggets",
+		"city": "Denver",
 		"abbr": "DEN",
 		"state": "Colorado",
 		"id": 16
@@ -76,6 +84,7 @@
 		"stadium": "Target Center",
 		"latitude": 44.979444,
 		"name": "Minnesota Timberwolves",
+		"city": "Minnesota",
 		"abbr": "MIN",
 		"state": "Minnesota",
 		"id": 17
@@ -85,6 +94,7 @@
 		"stadium": "Rose Garden",
 		"latitude": 45.531667,
 		"name": "Portland Trail Blazers",
+		"city": "Portland",
 		"abbr": "POR",
 		"state": "Oregon",
 		"id": 18
@@ -94,6 +104,7 @@
 		"stadium": "Oklahoma City Arena",
 		"latitude": 35.463333,
 		"name": "Oklahoma City Thunder",
+		"city": "Oklahoma City",
 		"abbr": "OKC",
 		"state": "Oklahoma",
 		"id": 19
@@ -103,6 +114,7 @@
 		"stadium": "Barclays Center",
 		"latitude": 40.6826465,
 		"name": "Brooklyn Nets",
+		"city": "Brooklyn",
 		"abbr": "BRK",
 		"state": "New York",
 		"id": 2
@@ -112,6 +124,7 @@
 		"stadium": "EnergySolutions Arena",
 		"latitude": 40.768333,
 		"name": "Utah Jazz",
+		"city": "Utah",
 		"abbr": "UTA",
 		"state": "Utah",
 		"id": 20
@@ -121,6 +134,7 @@
 		"stadium": "Chase Center",
 		"latitude": 37.768056,
 		"name": "Golden State Warriors",
+		"city": "Golden Warriors",
 		"abbr": "GSW",
 		"state": "California",
 		"id": 21
@@ -130,6 +144,7 @@
 		"stadium": "Staples Center",
 		"latitude": 34.043056,
 		"name": "Los Angeles Clippers",
+		"city": "Los Angeles",
 		"abbr": "LAC",
 		"state": "California",
 		"id": 22
@@ -139,6 +154,7 @@
 		"stadium": "Staples Center",
 		"latitude": 34.043056,
 		"name": "Los Angeles Lakers",
+		"city": "Los Angeles",
 		"abbr": "LAL",
 		"state": "California",
 		"id": 23
@@ -148,6 +164,7 @@
 		"stadium": "US Airways Center",
 		"latitude": 33.445833,
 		"name": "Phoenix Suns",
+		"city": "Phoenix",
 		"abbr": "PHO",
 		"state": "Arizona",
 		"id": 24
@@ -157,6 +174,7 @@
 		"stadium": "Golden 1 Center",
 		"latitude": 38.580361,
 		"name": "Sacramento Kings",
+		"city": "Sacramento",
 		"abbr": "SAC",
 		"state": "California",
 		"id": 25
@@ -166,6 +184,7 @@
 		"stadium": "American Airlines Center",
 		"latitude": 32.790556,
 		"name": "Dallas Mavericks",
+		"city": "Dallas",
 		"abbr": "DAL",
 		"state": "Texas",
 		"id": 26
@@ -175,6 +194,7 @@
 		"stadium": "Toyota Center",
 		"latitude": 29.750833,
 		"name": "Houston Rockets",
+		"city": "Houston",
 		"abbr": "HOU",
 		"state": "Texas",
 		"id": 27
@@ -184,6 +204,7 @@
 		"stadium": "FedExForum",
 		"latitude": 35.138333,
 		"name": "Memphis Grizzlies",
+		"city": "Memphis",
 		"abbr": "MEM",
 		"state": "Tennessee",
 		"id": 28
@@ -193,6 +214,7 @@
 		"stadium": "New Orleans Arena",
 		"latitude": 29.948889,
 		"name": "New Orleans Pelicans",
+		"city": "New Orleans",
 		"abbr": "NOP",
 		"id": 29
 	},
@@ -201,6 +223,7 @@
 		"stadium": "Madison Square Garden",
 		"latitude": 40.750556,
 		"name": "New York Knicks",
+		"city": "New York",
 		"abbr": "NYK",
 		"state": "New York",
 		"id": 3
@@ -210,6 +233,7 @@
 		"stadium": "AT&T Center",
 		"latitude": 29.426944,
 		"name": "San Antonio Spurs",
+		"city": "San Antonio",
 		"abbr": "SAS",
 		"state": "Texas",
 		"id": 30
@@ -219,6 +243,7 @@
 		"stadium": "Wells Fargo Center",
 		"latitude": 39.901111,
 		"name": "Philadelphia 76ers",
+		"city": "Philadelphia",
 		"abbr": "PHI",
 		"state": "Pennsylvania",
 		"id": 4
@@ -228,6 +253,7 @@
 		"stadium": "Air Canada Centre",
 		"latitude": 43.643333,
 		"name": "Toronto Raptors",
+		"city": "Toronto",
 		"abbr": "TOR",
 		"state": "Ontario",
 		"id": 5
@@ -237,6 +263,7 @@
 		"stadium": "United Center",
 		"latitude": 41.880556,
 		"name": "Chicago Bulls",
+		"city": "Chicago",
 		"abbr": "CHI",
 		"state": "Illinois",
 		"id": 6
@@ -246,6 +273,7 @@
 		"stadium": "Quicken Loans Arena",
 		"latitude": 41.496389,
 		"name": "Cleveland Cavaliers",
+		"city": "Cleveland",
 		"abbr": "CLE",
 		"state": "Ohio",
 		"id": 7
@@ -255,6 +283,7 @@
 		"stadium": "Little Caesars Arena",
 		"latitude": 42.341111,
 		"name": "Detroit Pistons",
+		"city": "Detroit",
 		"abbr": "DET",
 		"state": "Michigan",
 		"id": 8
@@ -264,6 +293,7 @@
 		"stadium": "Conseco Fieldhouse",
 		"latitude": 39.763889,
 		"name": "Indiana Pacers",
+		"city": "Indiana",
 		"abbr": "IND",
 		"state": "Indiana",
 		"id": 9
