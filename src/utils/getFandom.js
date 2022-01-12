@@ -1,6 +1,8 @@
 import { ascending, descending } from "d3";
 import teams from "$data/teams.json";
 
+const MILES_PER_DEGREE = 69;
+
 export default function getFandom({ region, loc }) {
 	if (!loc) return teams[Math.floor(Math.random() * teams.length)];
 	const [lat, lng] = loc.split(",").map(d => +d.trim());
@@ -11,6 +13,7 @@ export default function getFandom({ region, loc }) {
 	}));
 	result.sort((a, b) => descending(a.sameState, b.sameState) || ascending(a.dist, b.dist))
 	console.log({ region, lat, lng, result });
+	const match = result.find(d => d.dist * MILES_PER_DEGREE < 20);
 
-	return result[0];
+	return match || result[0];
 }

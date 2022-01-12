@@ -1,5 +1,7 @@
 <script>
-  import { extent, scaleLinear, mean, group, groups, ascending, descending } from "d3";
+  import { extent, scaleLinear, max, mean, group, groups, ascending, descending } from "d3";
+  import { mascot } from "$utils/teamLookup.js";
+
   export let data;
 
   const averages = groups(data, (d) => d.pick).map(([pick, players]) => ({
@@ -11,6 +13,7 @@
   const teams = grouped.map(([abbr, players]) => ({
     abbr,
     players,
+    pct_correct: mean(players.map((d) => (!!d.upgrade ? 0 : 1))),
     pick: mean(players.map((d) => d.pick)),
     rank_blend: mean(players.map((d) => d.rank_blend)),
     moved: mean(players.map((d) => d.moved)),
@@ -18,17 +21,18 @@
   }));
 
   const x = scaleLinear()
-    .domain(extent(teams, (d) => d.avg))
+    // .domain(extent(teams, (d) => d.avg))
+    .domain([0, 0.5])
     .range([0, 100]);
 
-  teams.sort((a, b) => descending(a.avg, b.avg));
+  teams.sort((a, b) => descending(a.pct_correct, b.pct_correct));
 </script>
 
-<h1>Average spots moved compared to each pick average</h1>
 <figure>
-  {#each teams as { abbr, players, pick, moved, rank_blend, avg }}
-    <div class="team" style="margin-left: {x(avg)}%;">
-      <p>{abbr} ({avg.toFixed(1)})</p>
+  {#each teams as { abbr, players, pick, moved, rank_blend, avg, pct_correct }}
+    <div class="team" style="--left: {x(pct_correct)}%;">
+      <img src="assets/logos/{abbr.toLowerCase()}.svg" alt="{abbr} logo" />
+      <p>{mascot(abbr)}</p>
     </div>
   {/each}
 </figure>
@@ -39,20 +43,31 @@
     width: 90%;
     max-width: 60em;
     margin: 0 auto;
+    border: 1px dashed var(--color-gray-light);
   }
 
   .team {
+    position: relative;
+    margin-bottom: 0.25em;
+    left: var(--left);
+  }
+
+  img {
+    width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    transform: translate(-110%, -50%);
   }
 
   p {
-    margin: 2px 0;
-    display: inline-block;
-    transform: translate(-50%, -50%);
+    margin: 0;
+    line-height: 1;
+    display: block;
     white-space: nowrap;
-    background: var(--color-off-black);
-    color: var(--color-white);
-    font-weight: bold;
-    padding: 0 0.25em;
+    /* font-weight: var(--bold); */
   }
 
   span {

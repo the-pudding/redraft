@@ -17,6 +17,33 @@
 */
 
 @font-face {
+	font-family: 'Rubik';
+	src: url('https://pudding.cool/assets/fonts/rubik/rubik-v14-latin-regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Rubik';
+	src: url('https://pudding.cool/assets/fonts/rubik/rubik-v14-latin-600.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Rubik';
+	src: url('https://pudding.cool/assets/fonts/rubik/rubik-v14-latin-800.woff2') format('woff2');
+	font-weight: 800;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+}
+
+/* @font-face {
 	font-family: 'National 2 Web';
 	src: url('https://pudding.cool/assets/fonts/national/National2Web-Regular.woff2') format('woff2');
 	font-weight: 500;
@@ -32,7 +59,7 @@
 	font-style: normal;
 	font-stretch: normal;
 	font-display: swap;
-}
+} */
 
 /*
 ********************

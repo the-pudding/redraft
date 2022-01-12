@@ -5,7 +5,9 @@
   import Table from "$components/Table.svelte";
   import Could from "$components/Could.svelte";
   import Histogram from "$components/Histogram.svelte";
-  import Teams from "$components/Teams.svelte";
+  import Teams from "$components/Teams2.svelte";
+  import Report from "$components/Report.svelte";
+  import Method from "$components/Method.svelte";
   import TeamSelect from "$components/TeamSelect.svelte";
 
   // import Footer from "$components/Footer.svelte";
@@ -35,16 +37,79 @@
   });
 </script>
 
-{#if fan}
-  <p>I'm guessing you are a fan of the {fan.name}?</p>
-  <p>Not your jam? Try another: <TeamSelect bind:team={selectedTeam} /></p>
-{/if}
+<section id="intro">
+  <h1>The NBA Redrafted 2.0</h1>
+  <p>
+    Five years ago we <a href="https://pudding.cool/2017/03/redraft/" target="_blank"
+      >redrafted the NBA</a
+    > with data. We figured it was time to add more recent drafts and take it for a fresh spin.
+  </p>
+  {#if fan}
+    <p>
+      So lets begin. I'm guessing you are a fan of the {fan.name}? No shame in admitting it. But if
+      not...
+    </p>
+    <p><TeamSelect bind:team={selectedTeam} /></p>
+  {/if}
+</section>
 
-{#if $teamData.abbr}
-  <Could {data} />
-{/if}
-<!-- <Teams {data} /> -->
+<section id="could">
+  <p>
+    Hindsight is 20/20, but it probably stings a bit to see what could have been for {$teamData.city}.
+  </p>
+  {#if $teamData.abbr}
+    <Could {data} />
+  {/if}
+  <p>
+    You might be wondering, where do these swaps come from? The short version: each player gets a
+    score from a blend of four advanced stats based on their top five seasons. An upgrade pick is
+    then found (based who was drafted lower with a higher score), and the players with the biggest
+    upgrade difference are shown.
+  </p>
+  <p>
+    <details>
+      <summary>Some more details and notes</summary>
+      <div>Don't fight me, fight the data. It isn't perfect nor is it meant to be.</div>
+    </details>
+  </p>
+</section>
+
+<section id="teams">
+  <h2>Drafting is hard. Here is how often each team selects the best player available.</h2>
+  <Teams {data} />
+  {#if $teamData.abbr}
+    <Report data={data.filter((d) => d.team === $teamData.abbr && d.pick <= 30)} />
+  {/if}
+</section>
+
+<section id="method">
+  <Method {data} />
+</section>
 <!-- <Scatter {data} /> -->
 <!-- <Histogram {data} /> -->
 
 <!-- <Table rows={data} /> -->
+<style>
+  section {
+    margin: 2em auto;
+  }
+
+  h1,
+  h2,
+  p {
+    max-width: 40rem;
+    margin: 1rem auto;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+</style>

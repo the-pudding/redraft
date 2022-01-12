@@ -1,6 +1,7 @@
 <script>
   import { ascending } from "d3";
   import teams from "$data/teams.json";
+
   teams.sort((a, b) => ascending(a.name, b.name));
   export let team = { name: "", abbr: "" };
   let value = "";

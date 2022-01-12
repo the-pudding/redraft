@@ -1,45 +1,24 @@
 <script>
   import { getContext } from "svelte";
-  import { group, groups, ascending, descending } from "d3";
+  import { groups, ascending, descending } from "d3";
   import Icon from "$components/helpers/Icon.svelte";
   export let data;
   export let metric = "norm_blend";
 
   const { teamData } = getContext("App");
 
-  const drafts = group(data, (d) => d.year);
-  Array.from(drafts).forEach(([year]) => {
-    const players = drafts.get(year);
-    players.sort((a, b) => ascending(a[metric], b[metric]));
-  });
-
-  const getUpgrade = (p) => {
-    const players = drafts.get(p.year);
-    players.sort((a, b) => descending(a[metric], b[metric]));
-    const match = players.find(
-      (other) =>
-        !upgraded[`${other.id}${p.team}`] &&
-        other.team !== p.team &&
-        other.pick > p.pick &&
-        other[metric] > p[metric]
-    );
-
-    return match;
-  };
-
-  const upgraded = {};
-
-  const upgrades = data.map((d) => ({
-    ...d,
-    upgrade: getUpgrade(d)
-  }));
-
-  const groupedTeams = groups(upgrades, (d) => d.team);
+  const groupedTeams = groups(data, (d) => d.team);
   const teams = groupedTeams.map(([abbr, all]) => {
-    const clean = all.filter((p) => p.upgrade);
-    const top10 = clean.filter((p) => p.pick < 11);
-    const top20 = clean.filter((p) => p.pick > 10 && p.pick < 21);
-    const top30 = clean.filter((p) => p.pick > 20 && p.pick < 31);
+    const withUpgrade = all
+      .filter((d) => d.upgrade)
+      .map((d) => ({
+        ...d,
+        upgrade: data.find((v) => v.id === d.upgrade)
+      }));
+    const top10 = withUpgrade.filter((d) => d.pick < 11);
+    const top20 = withUpgrade.filter((d) => d.pick > 10 && d.pick < 21);
+    const top30 = withUpgrade.filter((d) => d.pick > 20 && d.pick < 31);
+
     top10.sort((a, b) => descending(a.upgrade[metric] - a[metric], b.upgrade[metric] - b[metric]));
     top20.sort((a, b) => descending(a.upgrade[metric] - a[metric], b.upgrade[metric] - b[metric]));
     top30.sort((a, b) => descending(a.upgrade[metric] - a[metric], b.upgrade[metric] - b[metric]));
@@ -56,7 +35,7 @@
   $: team = teams.find((d) => d.abbr === $teamData.abbr);
 </script>
 
-<section>
+<figure>
   <div class="squad">
     <div class="inner">
       <ul>
@@ -65,7 +44,7 @@
             <div class="downgrade">
               <span class="player">
                 <span class="headshot">
-                  {#if image}<img src="assets/headshots/{id}.png" alt="" />{/if}
+                  <img src="assets/headshots/{image ? id : 'default'}.png" alt="{name} headshot" />
                 </span>
                 <span class="name">
                   <!-- #{pick} -->
@@ -80,7 +59,10 @@
             <div class="upgrade">
               <span class="player">
                 <span class="headshot">
-                  {#if upgrade.image}<img src="assets/headshots/{upgrade.id}.png" alt="" />{/if}
+                  <img
+                    src="assets/headshots/{upgrade.image ? upgrade.id : 'default'}.png"
+                    alt="{upgrade.name} headshot"
+                  />
                 </span>
                 <span class="name">
                   <!-- #{upgrade.pick} -->
@@ -100,15 +82,18 @@
       </ul>
     </div>
   </div>
-</section>
+</figure>
 
 <style>
+  figure {
+    margin: 4em auto;
+  }
+
   .squad {
-    max-width: 65em;
+    max-width: 50em;
     margin: 0 auto;
-    background: var(--color-white);
-    outline: var(--border-size) solid var(--color-off-black);
-    box-shadow: 8px 8px 0px 0px red;
+    background: var(--color-bg);
+    outline: var(--border-size) solid var(--color-fg);
     position: relative;
   }
 
@@ -120,14 +105,16 @@
     left: calc(var(--border-size) * 2);
     width: 100%;
     height: 100%;
-    background: var(--color-gray-dark);
     z-index: -1;
-    outline: var(--border-size) solid var(--color-off-black);
+    background: var(--color-fg);
+    outline: var(--border-size) solid var(--color-fg);
   }
 
   .inner {
     position: relative;
     padding: 2em;
+    background: var(--color-bg);
+    color: var(--color-fg);
   }
 
   .squad img {
@@ -140,7 +127,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25em;
+    font-size: 1em;
   }
 
   .team span {
@@ -148,7 +135,7 @@
   }
 
   .team .mascot {
-    font-weight: bold;
+    font-weight: var(--bold);
     text-transform: uppercase;
     font-size: 1.5em;
   }
@@ -176,7 +163,7 @@
     display: flex;
     flex-direction: column;
     padding: 0 0.5em;
-    width: 14em;
+    width: 9em;
     align-items: center;
   }
 
@@ -185,7 +172,7 @@
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    outline: calc(var(--border-size) * 0.5) solid black;
+    outline: calc(var(--border-size) * 0.5) solid var(--color-fg);
   }
 
   .downgrade .headshot {
@@ -197,8 +184,10 @@
   }
 
   .name {
-    margin-top: 1em;
-    font-weight: bold;
+    margin-top: 0.5em;
+    height: 2em;
+    font-weight: var(--extrabold);
+    text-align: center;
   }
 
   .swap {
@@ -213,7 +202,7 @@
   .year {
     display: block;
     margin-bottom: 0.5em;
-    font-weight: bold;
+    font-weight: var(--bold);
     font-size: 0.75em;
   }
 
@@ -221,5 +210,6 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    filter: grayscale(100%);
   }
 </style>

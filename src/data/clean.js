@@ -1,4 +1,4 @@
-import { scaleLinear, extent, groups, mean, descending, ascending } from "d3";
+import { scaleLinear, scaleQuantize, max, extent, group, groups, descending, ascending } from "d3";
 import data from "$data/redrafted.csv";
 
 const NO_VAL = -99;
@@ -31,7 +31,7 @@ const clean = data.map((d) => ({
 
 const scales = stats.map((stat) => {
 	const extents = extent(clean.filter(d => d[stat] !== NO_VAL).map(d => d[stat]));
-	const scale = scaleLinear().domain(extents).clamp(true);
+	const scale = scaleLinear().domain(extents).range([0, 100]).clamp(true);
 	return scale;
 });
 
@@ -40,25 +40,80 @@ clean.forEach((p) => {
 	let sum = 0;
 	stats.forEach((stat, i) => {
 		const v = scales[i](p[stat]);
-		p[`norm_${stat}`] = +v.toFixed(2);
+		p[`norm_${stat}`] = +v.toFixed(1);
 		sum += v;
 	});
-	p.norm_sum = +sum.toFixed(2);
+	p.norm_sum = +sum.toFixed(1);
 });
 
-const scaleBlend = scaleLinear().domain(extent(clean, d => d.norm_sum)).clamp(true);
+// normalize blend
+const scaleBlend = scaleLinear().domain(extent(clean, d => d.norm_sum)).range([0, 100]).clamp(true);
 clean.forEach((p) => {
-	p.norm_blend = +(scaleBlend(p.norm_sum)).toFixed(2);
+	p.norm_blend = +(scaleBlend(p.norm_sum)).toFixed(1);
 });
 
+// ranks and moved spots
 [...stats, "blend"].forEach((stat) => {
-	const seasons = groups(clean, (d) => d.year);
-	seasons.forEach(([year, players]) => {
+	const draftsRank = groups(clean, (d) => d.year);
+	draftsRank.forEach(([year, players]) => {
 		players.sort((a, b) => descending(a[`norm_${stat}`], b[`norm_${stat}`]) || ascending(a.pick, b.pick));
 		players.forEach((p, i) => {
 			p[`rank_${stat}`] = i + 1;
 			if (stat === "blend") p.moved = p.pick - (i + 1);
 		});
+	});
+});
+
+// upgrade
+const drafts = group(clean, (d) => d.year);
+
+Array.from(drafts).forEach(([year]) => {
+	const players = drafts.get(year);
+	players.sort((a, b) => descending(a.norm_blend, b.norm_blend));
+});
+
+
+const getUpgrade = (p) => {
+	const players = drafts.get(p.year);
+	const match = players.find(
+		(other) =>
+			!upgraded[`${other.id}${p.team}`] &&
+			other.team !== p.team &&
+			other.pick > p.pick &&
+			other.norm_blend > p.norm_blend
+	);
+	return match;
+};
+
+const upgraded = {};
+
+clean.forEach(d => {
+	const u = getUpgrade(d);
+	d.upgrade = u ? u.id : undefined;
+	d.potential = u ? +(u.norm_blend - d.norm_blend).toFixed(1) : 0;
+});
+
+
+// const maxPotential = max(clean, d => d.potential);
+// const scalePotential = scaleLinear().domain([maxPotential, 0]).range([0, 100]);
+
+// clean.forEach(d => {
+// 	d.potentialScaled = +scalePotential(d.potential).toFixed(1);
+// });
+
+
+// grade
+const draftsGrade = groups(clean, (d) => d.year);
+draftsGrade.forEach(([year, players]) => {
+	const first = players.filter(d => d.pick <= 30);
+	const m = max(first, d => d.potential);
+
+	const scaleG = scaleQuantize()
+		.domain([0, m])
+		.range(["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F"]);
+
+	first.forEach((p, i) => {
+		p.grade = scaleG(p.potential);
 	});
 });
 
