@@ -43,7 +43,7 @@
     width: 90%;
     max-width: 60em;
     margin: 0 auto;
-    border: 1px dashed var(--color-gray-light);
+    border: 1px dashed var(--color-gray-300);
   }
 
   .team {

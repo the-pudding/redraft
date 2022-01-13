@@ -65,7 +65,7 @@
 
   span {
     display: block;
-    opacity: 0.5;
+    color: var(--color-gray-500);
     font-weight: normal;
   }
 

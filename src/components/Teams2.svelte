@@ -36,12 +36,14 @@
   {#each byOdds as [odds, teamsO]}
     <div class="group">
       <h3 class="odds">1 in {odds}</h3>
-      {#each teamsO as { abbr, players, pick, moved, rank_blend, avg, pct_correct, odds }}
-        <div class="team" style="--left: {0};">
-          <img src="assets/logos/{abbr.toLowerCase()}.svg" alt="{abbr} logo" />
-          <p>{mascot(abbr)}</p>
-        </div>
-      {/each}
+      <div class="teams">
+        {#each teamsO as { abbr, players, pick, moved, rank_blend, avg, pct_correct, odds }}
+          <div class="team" style="--left: {0};">
+            <img src="assets/logos/{abbr.toLowerCase()}.svg" alt="{abbr} logo" />
+            <p>{mascot(abbr)}</p>
+          </div>
+        {/each}
+      </div>
     </div>
   {/each}
 </figure>
@@ -57,7 +59,9 @@
 
   .group {
     width: calc(1 / 11 * 100%);
+    width: 100%;
     outline: 2px solid white;
+    position: relative;
     /* width: 100%; */
     /* display: flex; */
   }
@@ -68,8 +72,17 @@
     margin-bottom: 1em;
   }
 
+  .teams {
+    display: flex;
+  }
+
   .odds {
-    text-align: center;
+    /* text-align: center; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-100%, 0);
+    padding-right: 1em;
   }
 
   img {

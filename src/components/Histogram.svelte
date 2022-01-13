@@ -1,5 +1,6 @@
 <script>
   import { group, groups, ascending, descending } from "d3";
+  import Range from "$components/helpers/Range.svelte";
   export let data;
 
   const metric = "moved";
@@ -33,125 +34,149 @@
     // hack TODO
     if (bins.length < 5) bins.unshift([-20, []]);
   });
+
+  const min = drafts[0][0];
+  const max = drafts[drafts.length - 1][0];
+  let activeYear = max;
 </script>
 
-<section>
-  <h1>Busts and Steals kind of</h1>
-  <p>Showing players with minutes > 1000 or that moved 10+ spots in redraft</p>
-  <div class="drafts">
-    {#each drafts as [year, bins]}
-      <div class="draft">
-        <h2>{year}</h2>
-        <div class="bins">
-          {#each bins as [bin, players]}
-            <div class="bin">
-              {#each players as { name, pick }}
-                <p>{name}</p>
-              {/each}
-            </div>
-          {/each}
-        </div>
-      </div>
-    {/each}
+<div class="ui">
+  <div class="range">
+    <Range {min} {max} showTicks={true} step={1} bind:value={activeYear} />
   </div>
-</section>
+</div>
+
+<div class="drafts">
+  {#each drafts as [year, bins]}
+    <div class="draft" class:visible={year === activeYear}>
+      <h3>{year} Draft Class</h3>
+      <div class="bins">
+        {#each bins as [bin, players]}
+          <div class="bin">
+            {#each players as { name, pick }}
+              <p>{name}</p>
+            {/each}
+          </div>
+        {/each}
+      </div>
+    </div>
+  {/each}
+</div>
 
 <style>
-  section {
-    padding: 1em;
+  .range {
+    width: 90%;
+    max-width: 30em;
+    margin: 2em auto;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+
+  .drafts {
+    margin: 0em auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 700px;
   }
 
   .draft {
-    margin-bottom: 4em;
+    display: none;
   }
+
+  .visible {
+    display: block;
+  }
+
   .bins {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
   .bin {
-    width: 11em;
+    width: 10em;
     margin: 0 0.5em;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .bin:nth-of-type(3) {
+    width: 20em;
+  }
+
+  .bin:nth-of-type(3) p {
+    width: calc(50% - 0.5em);
   }
 
   .bin:before {
     display: block;
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    /* text-align: center; */
-    transform: translate(0, 125%);
+    transform: translate(0, -100%);
     padding: 0.5em;
     font-size: 14px;
-    border-top: 1px solid currentColor;
+    text-align: center;
+    font-weight: var(--bold);
   }
 
   p {
     margin: 0;
-    /* text-align: center; */
-    /* background: pink; */
     white-space: nowrap;
     overflow: hidden;
-    margin-bottom: 1px;
+    margin: 2px;
+    padding: 0.25em;
+    font-weight: var(--bold);
     text-overflow: ellipsis;
+    border: 0.2em solid black;
+    width: 100%;
+    text-align: center;
   }
 
-  .bin:nth-of-type(1) {
-    color: #a44;
+  .bin:nth-of-type(1) p {
+    background: var(--color-red);
   }
 
-  .bin:nth-of-type(2) {
-    color: #922;
+  .bin:nth-of-type(2) p {
+    background: var(--color-red-light);
   }
 
-  /* .bin:nth-of-type(3) {
-    color: #700;
-  } */
-
-  .bin:nth-of-type(3) {
-    color: #555;
+  .bin:nth-of-type(3) p {
+    background: var(--color-gray-100);
   }
 
-  /* .bin:nth-of-type(5) {
-    color: #070;
-  } */
-
-  .bin:nth-of-type(4) {
-    color: #292;
+  .bin:nth-of-type(4) p {
+    background: var(--color-green-light);
   }
 
-  .bin:nth-of-type(5) {
-    color: #4a4;
+  .bin:nth-of-type(5) p {
+    background: var(--color-green);
   }
 
   .bin:nth-of-type(1):before {
-    content: "⬇️ 20+ spots";
+    content: "⬇ 20 spots";
   }
 
   .bin:nth-of-type(2):before {
-    content: "⬇️ 10+ spots";
+    content: "⬇ 10 spots";
   }
-
-  /* .bin:nth-of-type(3):before {
-    content: "⬇️ 5+ spots";
-  } */
 
   .bin:nth-of-type(3):before {
     content: "+/- 10 spots";
   }
 
-  /* .bin:nth-of-type(5):before {
-    content: "⬆️ 5+ spots";
-  } */
-
   .bin:nth-of-type(4):before {
-    content: "⬆️ 10+ spots";
+    content: "⬆ 10 spots";
   }
 
   .bin:nth-of-type(5):before {
-    content: "⬆️ 20+ spots";
+    content: "⬆ 20 spots";
   }
 
   .bin:nth-of-type(1),
@@ -163,11 +188,6 @@
   .bin:nth-of-type(4) {
     font-size: 15px;
   }
-  /* 
-  .bin:nth-of-type(3),
-  .bin:nth-of-type(3) {
-    font-size: 12px;
-  } */
 
   .bin:nth-of-type(3) {
     font-size: 10px;

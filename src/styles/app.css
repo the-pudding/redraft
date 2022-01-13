@@ -22,15 +22,15 @@
 	--font-body: var(--sans);
 	--font-form: var(--sans);
 	--color-bg: var(--color-white);
-	--color-fg: var(--color-off-black);
-	--color-placeholder: var(--color-gray-dark);
-  --color-link: var(--color-purple);
+	--color-fg: var(--color-gray-900);
+	--color-placeholder: var(--color-gray-500);
+  --color-link: var(--color-green);
   --color-focus: var(--color-red);
-  --color-form-bg: var(--color-off-white);
-	--color-form-fg: var(--color-off-black);
-	--color-border: var(--color-gray-light);
-	--color-selection: var(--color-gray-light);
-  --color-highlight: var(--color-yellow);
+  --color-form-bg: var(--color-gray-100);
+	--color-form-fg: var(--color-gray-900);
+	--color-border: var(--color-gray-300);
+	--color-selection: var(--color-gray-300);
+  --color-highlight: var(--color-green);
 	--bold: 600;
 	--extrabold: 800;
 }
@@ -45,5 +45,9 @@ h1, h2, h3 {
 }
 
 table tr:nth-of-type(even) {
-	background: var(--color-gray-light);
+	background: var(--color-gray-100);
+}
+
+a {
+	color: currentColor;
 }

@@ -159,7 +159,7 @@
   .dot {
     width: 0.25em;
     height: 0.25em;
-    background: var(--color-gray-light);
+    background: var(--color-gray-300);
     border-radius: 50%;
     transform: translate(50%, -50%);
     pointer-events: none;
@@ -225,7 +225,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    color: var(--color-gray-dark);
+    color: var(--color-gray-700);
   }
 
   .axis.x {
@@ -287,7 +287,7 @@
     left: 50%;
     transform: translate(0, -100%);
     width: 1px;
-    border-right: 1px dashed var(--color-gray-light);
+    border-right: 1px dashed var(--color-gray-300);
   }
 
   .axis.y span {
@@ -295,7 +295,7 @@
     right: 0;
     height: 1px;
     transform: translate(100%, -100%);
-    border-bottom: 1px dashed var(--color-gray-light);
+    border-bottom: 1px dashed var(--color-gray-300);
   }
 
   .axis .tick p {

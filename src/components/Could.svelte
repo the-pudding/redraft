@@ -87,6 +87,7 @@
 <style>
   figure {
     margin: 4em auto;
+    min-height: 320px;
   }
 
   .squad {
@@ -176,11 +177,11 @@
   }
 
   .downgrade .headshot {
-    background: pink;
+    background: var(--color-red-light);
   }
 
   .upgrade .headshot {
-    background: lightgreen;
+    background: var(--color-green-light);
   }
 
   .name {
@@ -192,7 +193,7 @@
 
   .swap {
     font-size: 1.5em;
-    opacity: 0.5;
+    color: var(--color-gray-400);
     align-items: center;
     display: flex;
     flex-direction: column;

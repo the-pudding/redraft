@@ -5,7 +5,8 @@
   import Table from "$components/Table.svelte";
   import Could from "$components/Could.svelte";
   import Histogram from "$components/Histogram.svelte";
-  import Teams from "$components/Teams2.svelte";
+  import Teams from "$components/Teams.svelte";
+  import Teams2 from "$components/Teams2.svelte";
   import Report from "$components/Report.svelte";
   import Method from "$components/Method.svelte";
   import TeamSelect from "$components/TeamSelect.svelte";
@@ -38,7 +39,7 @@
 </script>
 
 <section id="intro">
-  <h1>The NBA Redrafted 2.0</h1>
+  <h1>The NBA Redrafted <mark>2.0</mark></h1>
   <p>
     Five years ago we <a href="https://pudding.cool/2017/03/redraft/" target="_blank"
       >redrafted the NBA</a
@@ -77,16 +78,20 @@
 <section id="teams">
   <h2>Drafting is hard. Here is how often each team selects the best player available.</h2>
   <Teams {data} />
+  <Teams2 {data} />
   {#if $teamData.abbr}
     <Report data={data.filter((d) => d.team === $teamData.abbr && d.pick <= 30)} />
   {/if}
 </section>
 
+<!-- <Scatter {data} /> -->
+<section id="histogram">
+  <Histogram {data} />
+</section>
+
 <section id="method">
   <Method {data} />
 </section>
-<!-- <Scatter {data} /> -->
-<!-- <Histogram {data} /> -->
 
 <!-- <Table rows={data} /> -->
 <style>
@@ -103,6 +108,7 @@
 
   h1 {
     font-size: 3em;
+    text-transform: uppercase;
   }
 
   h2 {
