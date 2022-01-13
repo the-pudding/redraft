@@ -10,7 +10,18 @@
   $: bins = groups(data, (d) => d.grade);
 </script>
 
-<table>
+<h3>First-Rounders Report Card</h3>
+<figure>
+  {#each data as { name, grade, year }}
+    <div class="player">
+      <span>{name}</span>
+      <span>{grade}</span>
+      <span>{year}</span>
+    </div>
+  {/each}
+</figure>
+
+<!-- <table>
   <thead>
     <th>Name</th>
     <th>Pick Grade</th>
@@ -23,8 +34,9 @@
       <td>{year}</td>
     </tr>
   {/each}
-</table>
+</table> -->
 
+<!-- 
 <figure>
   {#each bins as [grade, players]}
     <div class="bin">
@@ -38,19 +50,30 @@
       </div>
     </div>
   {/each}
-</figure>
-
+</figure> -->
 <style>
   figure {
-    /* display: flex; */
-    max-width: 60em;
+    max-width: 40em;
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  h3 {
+  .player {
+    width: 50%;
+    display: table-row;
+  }
+
+  span {
+    display: table-cell;
+    width: 100%;
+    padding: 0.5em;
+  }
+
+  /* h3 {
     font-weight: var(--extrabold);
     font-size: 1.5em;
-  }
-
+  } */
+  /* 
   .players {
     display: flex;
     flex-wrap: wrap;
@@ -67,11 +90,13 @@
     display: block;
     color: var(--color-gray-500);
     font-weight: normal;
-  }
+  } */
 
   table {
     max-width: 30em;
+    margin: 0 auto;
   }
+
   td:last-of-type,
   th:last-of-type {
     text-align: right;

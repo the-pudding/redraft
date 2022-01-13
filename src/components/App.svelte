@@ -6,8 +6,6 @@
   import Could from "$components/Could.svelte";
   import Histogram from "$components/Histogram.svelte";
   import Teams from "$components/Teams.svelte";
-  import Teams2 from "$components/Teams2.svelte";
-  import Report from "$components/Report.svelte";
   import Method from "$components/Method.svelte";
   import TeamSelect from "$components/TeamSelect.svelte";
 
@@ -78,10 +76,12 @@
 <section id="teams">
   <h2>Drafting is hard. Here is how often each team selects the best player available.</h2>
   <Teams {data} />
-  <Teams2 {data} />
-  {#if $teamData.abbr}
-    <Report data={data.filter((d) => d.team === $teamData.abbr && d.pick <= 30)} />
-  {/if}
+  <p>
+    There are a couple contributing factors other than drafting prowess that make for teams like the
+    Spurs apparent dominance. First, teams that draft higher on average (like the Clippers) have
+    more room for error since there are more players they are passing on. Second, teams might just
+    be better at player development.
+  </p>
 </section>
 
 <!-- <Scatter {data} /> -->
