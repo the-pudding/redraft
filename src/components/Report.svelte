@@ -1,6 +1,21 @@
 <script>
   import { groups, ascending } from "d3";
   export let data;
+  const colors = {
+    "A+": "#61e8e1",
+    A: "#81eae3",
+    "A-": "#9bebe6",
+    "B+": "#b3ece8",
+    B: "#c8edea",
+    "B-": "#dceeed",
+    "C+": "#efefef",
+    C: "#f4d9d3",
+    "C-": "#f7c2b8",
+    "D+": "#f8ab9e",
+    D: "#f69484",
+    "D-": "#f37c6b",
+    F: "#ee6352"
+  };
 
   $: data.sort((a, b) => {
     const order = { "+": -1, "-": 1, undefined: 0 };
@@ -13,7 +28,7 @@
 <h3>First-Rounders Report Card</h3>
 <figure>
   {#each data as { name, grade, year }}
-    <div class="player">
+    <div class="player" style="background-color: {colors[grade]};">
       <span>{name}</span>
       <span>{grade}</span>
       <span>{year}</span>
@@ -60,37 +75,33 @@
 
   .player {
     width: 50%;
-    display: table-row;
-  }
-
-  span {
-    display: table-cell;
-    width: 100%;
-    padding: 0.5em;
-  }
-
-  /* h3 {
-    font-weight: var(--extrabold);
-    font-size: 1.5em;
-  } */
-  /* 
-  .players {
+    border: 1px solid var(--color-bg);
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-  }
-
-  .player {
-    padding: 0 1em;
-    text-align: center;
-    font-weight: var(--bold);
+    justify-content: space-between;
+    padding: 0.5em 0;
   }
 
   span {
-    display: block;
-    color: var(--color-gray-500);
-    font-weight: normal;
-  } */
+    width: 100%;
+    display: inline-block;
+    padding: 0 0.5em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  span:nth-of-type(1) {
+    width: 10em;
+  }
+
+  span:nth-of-type(2) {
+    width: 3em;
+    text-align: left;
+  }
+
+  span:nth-of-type(3) {
+    width: 4em;
+    text-align: left;
+  }
 
   table {
     max-width: 30em;

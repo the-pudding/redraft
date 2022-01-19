@@ -109,6 +109,7 @@
       in the Could Have Been teams were first selected from top 10 picks, then searched beyond those
       if there weren't enough.
     </p>
+    <p>TBD on report grade calculation.</p>
     <Method {data} />
   </div>
 </section>

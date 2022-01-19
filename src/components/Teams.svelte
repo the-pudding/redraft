@@ -33,7 +33,7 @@
 
 <figure>
   <ul>
-    {#each teams as { abbr, players, pick, moved, rank_blend, avg, pct_correct }}
+    {#each teams as { abbr, players, pick, moved, rank_blend, avg, pct_correct }, i}
       <li class="team" style="--left: {x(pct_correct)}%;">
         <div class="above">
           <button
@@ -41,9 +41,16 @@
               activeTeam = activeTeam === abbr ? undefined : abbr;
             }}
           >
-            <span class="percent">{Math.round(pct_correct * 100)}%</span>
+            <span class="percent"
+              >{Math.round(pct_correct * 100)}% {#if i === 0}
+                of the time the
+              {/if}</span
+            >
             <span class="mascot">{mascot(abbr)}</span>
             <img src="assets/logos/{abbr.toLowerCase()}.svg" alt="{abbr} logo" />
+            {#if i === 0}
+              <span class="pick">pick the best player</span>
+            {/if}
           </button>
         </div>
         <div class="below" class:visible={activeTeam === abbr}>
@@ -97,11 +104,13 @@
     /* transform: translate(0%, -0.25em); */
   }
 
-  .percent {
+  .percent,
+  .pick {
     color: var(--color-gray-500);
     font-size: 12px;
     display: none;
     position: absolute;
+    padding-left: 0.75em;
   }
 
   li:first-of-type .percent,
@@ -110,7 +119,14 @@
     top: 0;
     left: 0;
     transform: translate(0, -125%);
-    /* background-color: var(--color-gray-100); */
+  }
+
+  li:first-of-type .pick,
+  li:last-of-type .pick {
+    display: inline-block;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 125%);
   }
 
   .below {
