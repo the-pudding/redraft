@@ -64,6 +64,10 @@
 </div>
 
 <style>
+  .ui {
+    margin-top: 4em;
+  }
+
   .range {
     width: 90%;
     max-width: 30em;
@@ -137,6 +141,7 @@
     border: 0.2em solid black;
     width: 100%;
     text-align: center;
+    user-select: none;
   }
 
   .bin:nth-of-type(1) p {

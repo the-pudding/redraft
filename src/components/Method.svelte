@@ -6,22 +6,29 @@
   const top = data.slice(0, 50);
 </script>
 
-<table>
-  <thead>
-    <th valign="bottom">Rank</th>
-    <th valign="bottom">Name</th>
-    <th valign="bottom">Normalized Production</th>
-  </thead>
-  {#each top as { name, norm_blend }, i}
-    <tr>
-      <td>{i + 1}</td>
-      <td>{name}</td>
-      <td>{Math.round(norm_blend)}</td>
-    </tr>
-  {/each}
-</table>
+<div id="method-table">
+  <h3>Top 50 Players Since the 1989 Draft</h3>
+  <table>
+    <thead>
+      <th valign="bottom">Rank</th>
+      <th valign="bottom">Name</th>
+      <th valign="bottom">Normalized Production</th>
+    </thead>
+    {#each top as { name, norm_blend }, i}
+      <tr>
+        <td>{i + 1}</td>
+        <td>{name}</td>
+        <td>{Math.round(norm_blend)}</td>
+      </tr>
+    {/each}
+  </table>
+</div>
 
 <style>
+  div {
+    padding-top: 2em;
+  }
+
   table {
     width: 100%;
     margin: 0 auto;

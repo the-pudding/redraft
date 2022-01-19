@@ -52,7 +52,6 @@
       </li>
     {/each}
   </ul>
-  <figcaption>TBD figcaption</figcaption>
 </figure>
 
 <style>
@@ -60,7 +59,7 @@
     position: relative;
     width: 90%;
     max-width: 60em;
-    margin: 0 auto;
+    margin: 4em auto;
   }
 
   .team {

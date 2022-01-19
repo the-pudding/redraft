@@ -91,7 +91,7 @@
 <!-- <Scatter {data} /> -->
 <section id="histogram">
   <div class="prose">
-    <h2>Histogram title</h2>
+    <h2>The biggest busts and steals for every NBA draft class through 2017</h2>
   </div>
   <Histogram {data} />
 </section>
@@ -100,15 +100,21 @@
   <div class="prose">
     <h2>Data and Methods</h2>
     <p>
-      The four advanced stats used to create a player's score are <a href="#">VORP</a>,
-      <a href="#">Win Shares</a>, <a href="#">RAPTOR WAR</a>, and <a href="#">Wins Added</a>. Each
-      stat has its pros and cons, and I was most satisified with the eye test after blending them.
-      Each was normalized to a 1-100 then averaged together to create a master scale. Scores were
-      based on a player's top five seasons to find the balance between prime and longevity (an
-      average NBA career is 4.5 years). Upgrade choices in the Could Have Beens were first selected
-      based on top 10 picks, then expanded if there weren't enough swaps.
+      The four advanced stats used to create a player's score were <a href="#">VORP</a>,
+      <a href="#">Win Shares</a>, <a href="#">RAPTOR WAR</a>, and <a href="#">Wins Added</a>. No
+      all-in-one advanced stat is perfect, so I chose a blend that satisfied the eye test (see
+      <a href="#method-table">table below</a>).Each stat was normalized to a 1-100 then averaged
+      together to create a master scale. Scores were based on a player's top five seasons to find
+      the balance between prime and longevity (an average NBA career is 4.5 years). Upgrade choices
+      in the Could Have Been teams were first selected from top 10 picks, then searched beyond those
+      if there weren't enough.
     </p>
-    <h3>Top 50 Players Since the 1989 Draft</h3>
     <Method {data} />
   </div>
 </section>
+
+<style>
+  #method .prose p {
+    font-size: 1.25em;
+  }
+</style>
