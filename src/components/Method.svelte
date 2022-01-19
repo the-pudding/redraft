@@ -6,18 +6,11 @@
   const top = data.slice(0, 50);
 </script>
 
-<h2>Data and Methods</h2>
-<h3>Top 50 Players Since the 1989 Draft</h3>
-<p>
-  Normalized Production is an average of the top five seasons based on four advanced stats
-  (a,b,c,d). Five seasons because average NBA career is 4.5, it gets their best years. Four stats
-  because I can never just pick one, they all have their strengths and weaknesses.
-</p>
 <table>
   <thead>
-    <th>Rank</th>
-    <th>Name</th>
-    <th>Normalized Production</th>
+    <th valign="bottom">Rank</th>
+    <th valign="bottom">Name</th>
+    <th valign="bottom">Normalized Production</th>
   </thead>
   {#each top as { name, norm_blend }, i}
     <tr>
@@ -30,13 +23,18 @@
 
 <style>
   table {
-    max-width: 28em;
+    width: 100%;
     margin: 0 auto;
+  }
+
+  th {
+    vertical-align: bottom;
+    line-height: 1.2;
   }
 
   td:nth-of-type(1),
   th:nth-of-type(1) {
-    width: 3em;
+    width: 3.5em;
   }
 
   td:nth-of-type(1),

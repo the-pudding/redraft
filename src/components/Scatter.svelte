@@ -318,14 +318,6 @@
     text-align: right;
   }
 
-  :global(.prose button) {
-    /* padding: 0; */
-  }
-
-  .prose p {
-    display: none;
-  }
-
   .prose p:first-of-type {
     display: block;
   }

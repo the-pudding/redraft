@@ -51,3 +51,41 @@ table tr:nth-of-type(even) {
 a {
 	color: currentColor;
 }
+
+ section {
+    margin: 2em auto;
+  }
+
+	.prose {
+		max-width: 40rem;
+		margin: 1rem auto;
+	}
+
+  .prose h1,
+  .prose h2,
+	.prose h3,
+  .prose p {
+    margin: 1rem auto;
+  }
+
+  .prose h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+  }
+
+  .prose h2 {
+    font-size: 2em;
+  }
+
+	.prose h3 {
+    font-size: 1.5em;
+  }
+
+  .prose p {
+    font-size: 1.5em;
+  }
+
+	section {
+		max-width: 90%;
+		margin: 4rem auto;
+	}

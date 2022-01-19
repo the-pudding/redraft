@@ -37,85 +37,78 @@
 </script>
 
 <section id="intro">
-  <h1>The NBA Redrafted <mark>2.0</mark></h1>
-  <p>
-    Five years ago we <a href="https://pudding.cool/2017/03/redraft/" target="_blank"
-      >redrafted the NBA</a
-    > with data. We figured it was time to add more recent drafts and take it for a fresh spin.
-  </p>
-  {#if fan}
+  <div class="prose">
+    <h1>The NBA Redrafted <mark>2.0</mark></h1>
     <p>
-      So lets begin. I'm guessing you are a fan of the {fan.name}? No shame in admitting it. But if
-      not...
+      Five years ago we <a href="https://pudding.cool/2017/03/redraft/" target="_blank"
+        >redrafted the NBA</a
+      > with data. We figured it was time to add more recent drafts and ask some new questions.
     </p>
-    <p><TeamSelect bind:team={selectedTeam} /></p>
-  {/if}
+    {#if fan}
+      <p>
+        So let's begin. I'm guessing you are a fan of the {fan.name}? No shame in admitting it. But
+        if not...
+      </p>
+      <p><TeamSelect bind:team={selectedTeam} /></p>
+    {/if}
+  </div>
 </section>
 
 <section id="could">
-  <p>
-    Hindsight is 20/20, but it probably stings a bit to see what could have been for {$teamData.city}.
-  </p>
+  <div class="prose">
+    <h2>
+      Hindsight is 20/20, but it probably stings a bit to see what could have been for {$teamData.city}.
+    </h2>
+  </div>
   {#if $teamData.abbr}
     <Could {data} />
   {/if}
-  <p>
-    You might be wondering, where do these swaps come from? The short version: each player gets a
-    score from a blend of four advanced stats based on their top five seasons. An upgrade pick is
-    then found (based who was drafted lower with a higher score), and the players with the biggest
-    upgrade difference are shown.
-  </p>
-  <p>
-    <details>
-      <summary>Some more details and notes</summary>
-      <div>Don't fight me, fight the data. It isn't perfect nor is it meant to be.</div>
-    </details>
-  </p>
+  <div class="prose">
+    <p>
+      Where do these swaps come from? The short version: each player gets a score from a blend of
+      four advanced stats based on their top five seasons. An upgrade pick is player that was
+      drafted lower but has a higher score. Squads are made up of the biggest score upgrades. See
+      the <a href="#method">method section</a> for more details.
+    </p>
+  </div>
 </section>
 
 <section id="teams">
-  <h2>Drafting is hard. Here is how often each team selects the best player available.</h2>
+  <div class="prose">
+    <h2>Drafting is hard. Here is how often each team selects the best player available.</h2>
+  </div>
   <Teams {data} />
-  <p>
-    There are a couple contributing factors other than drafting prowess that make for teams like the
-    Spurs apparent dominance. First, teams that draft higher on average (like the Clippers) have
-    more room for error since there are more players they are passing on. Second, teams might just
-    be better at player development.
-  </p>
+  <div class="prose">
+    <p>
+      There are a couple contributing factors other than drafting prowess that make for teams like
+      the Spurs apparent dominance. First, teams that draft higher on average (like the Clippers)
+      have more room for error since there are more players they are passing on. Second, teams might
+      just be better at player development.
+    </p>
+  </div>
 </section>
 
 <!-- <Scatter {data} /> -->
 <section id="histogram">
+  <div class="prose">
+    <h2>Histogram title</h2>
+  </div>
   <Histogram {data} />
 </section>
 
 <section id="method">
-  <Method {data} />
+  <div class="prose">
+    <h2>Data and Methods</h2>
+    <p>
+      The four advanced stats used to create a player's score are <a href="#">VORP</a>,
+      <a href="#">Win Shares</a>, <a href="#">RAPTOR WAR</a>, and <a href="#">Wins Added</a>. Each
+      stat has its pros and cons, and I was most satisified with the eye test after blending them.
+      Each was normalized to a 1-100 then averaged together to create a master scale. Scores were
+      based on a player's top five seasons to find the balance between prime and longevity (an
+      average NBA career is 4.5 years). Upgrade choices in the Could Have Beens were first selected
+      based on top 10 picks, then expanded if there weren't enough swaps.
+    </p>
+    <h3>Top 50 Players Since the 1989 Draft</h3>
+    <Method {data} />
+  </div>
 </section>
-
-<!-- <Table rows={data} /> -->
-<style>
-  section {
-    margin: 2em auto;
-  }
-
-  h1,
-  h2,
-  p {
-    max-width: 40rem;
-    margin: 1rem auto;
-  }
-
-  h1 {
-    font-size: 3em;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    font-size: 2em;
-  }
-
-  p {
-    font-size: 1.5em;
-  }
-</style>

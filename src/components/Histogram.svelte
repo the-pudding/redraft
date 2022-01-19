@@ -81,7 +81,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    min-height: 700px;
+    min-height: 720px;
   }
 
   .draft {
