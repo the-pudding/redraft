@@ -17,7 +17,7 @@
 	--z-overlay: 1000;
 
 	/* presets */
-	--border-radius: 4px;
+	--border-radius: 0px;
 	--border-size: 8px;
 	--font-body: var(--sans);
 	--font-form: var(--sans);

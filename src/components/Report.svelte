@@ -1,5 +1,6 @@
 <script>
   import { groups, ascending } from "d3";
+  import SortTable from "$components/helpers/SortTable.svelte";
   export let data;
   const colors = {
     "A+": "#61e8e1",
@@ -17,99 +18,48 @@
     F: "#ee6352"
   };
 
-  $: data.sort((a, b) => {
+  const customSort = (a, b, fn) => {
     const order = { "+": -1, "-": 1, undefined: 0 };
-    return ascending(a.grade[0], b.grade[0]) || ascending(order[a.grade[1]], order[b.grade[1]]);
-  });
+    return (
+      fn(a.grade[0], b.grade[0]) ||
+      fn(order[a.grade[1]], order[b.grade[1]]) ||
+      fn(a.potential, b.potential)
+    );
+  };
 
-  $: bins = groups(data, (d) => d.grade);
+  data.sort((a, b) => customSort(a, b, ascending));
+
+  let rows = data.map((d) => ({
+    ...d,
+    potential: Math.round(d.potential),
+    style: `background-color: ${colors[d.grade]}`
+  }));
+
+  let columns = [
+    {
+      label: "Name",
+      prop: "name",
+      type: "text"
+    },
+    {
+      label: "Grade",
+      prop: "grade",
+      type: "text",
+      dir: "asc",
+      sortFn: customSort
+    },
+    {
+      label: "Potential",
+      prop: "potential",
+      type: "number"
+    },
+    {
+      label: "Year",
+      prop: "year",
+      type: "number"
+    }
+  ];
 </script>
 
-<h3>First-Rounders Report Card</h3>
-<figure>
-  {#each data as { name, grade, year }}
-    <div class="player" style="background-color: {colors[grade]};">
-      <span>{name}</span>
-      <span>{grade}</span>
-      <span>{year}</span>
-    </div>
-  {/each}
-</figure>
-
-<!-- <table>
-  <thead>
-    <th>Name</th>
-    <th>Pick Grade</th>
-    <th>Year</th>
-  </thead>
-  {#each data as { name, grade, year }}
-    <tr>
-      <td>{name}</td>
-      <td>{grade}</td>
-      <td>{year}</td>
-    </tr>
-  {/each}
-</table> -->
-
-<!-- 
-<figure>
-  {#each bins as [grade, players]}
-    <div class="bin">
-      <div class="players">
-        <h3>{grade}</h3>
-        {#each players as { name, year }}
-          <div class="player">
-            <p><span>{year}</span>{name}</p>
-          </div>
-        {/each}
-      </div>
-    </div>
-  {/each}
-</figure> -->
-<style>
-  figure {
-    max-width: 40em;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .player {
-    width: 50%;
-    border: 1px solid var(--color-bg);
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5em 0;
-  }
-
-  span {
-    width: 100%;
-    display: inline-block;
-    padding: 0 0.5em;
-    line-height: 1;
-    white-space: nowrap;
-  }
-
-  span:nth-of-type(1) {
-    width: 10em;
-  }
-
-  span:nth-of-type(2) {
-    width: 3em;
-    text-align: left;
-  }
-
-  span:nth-of-type(3) {
-    width: 4em;
-    text-align: left;
-  }
-
-  table {
-    max-width: 30em;
-    margin: 0 auto;
-  }
-
-  td:last-of-type,
-  th:last-of-type {
-    text-align: right;
-  }
-</style>
+<h3>First Round Picks Report Card</h3>
+<SortTable {rows} {columns} />

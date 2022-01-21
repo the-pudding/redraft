@@ -1,6 +1,7 @@
 <script>
   import { onMount, setContext } from "svelte";
   import { writable } from "svelte/store";
+  import WIP from "$components/helpers/WIP.svelte";
   import Scatter from "$components/Scatter.svelte";
   import Table from "$components/Table.svelte";
   import Could from "$components/Could.svelte";
@@ -36,6 +37,7 @@
   });
 </script>
 
+<WIP />
 <section id="intro">
   <div class="prose">
     <h1>The NBA Redrafted <mark>2.0</mark></h1>

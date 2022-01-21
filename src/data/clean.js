@@ -90,6 +90,7 @@ const upgraded = {};
 clean.forEach(d => {
 	const u = getUpgrade(d);
 	d.upgrade = u ? u.id : undefined;
+	d.upgradeName = u ? u.name : undefined;
 	d.potential = u ? +(u.norm_blend - d.norm_blend).toFixed(1) : 0;
 });
 
@@ -104,17 +105,19 @@ clean.forEach(d => {
 
 // grade
 const draftsGrade = groups(clean, (d) => d.year);
+
+const scaleG = scaleQuantize()
+	.domain(extent(clean.filter(d => d.pick <= 30), d => d.potential))
+	.range(["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F"]);
+
 draftsGrade.forEach(([year, players]) => {
 	const first = players.filter(d => d.pick <= 30);
-	const m = max(first, d => d.potential);
-
-	const scaleG = scaleQuantize()
-		.domain([0, m])
-		.range(["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F"]);
 
 	first.forEach((p, i) => {
 		p.grade = scaleG(p.potential);
 	});
+
+	first.sort((a, b) => ascending(a.potential, b.potential));
 });
 
 clean.sort((a, b) => a.pick - b.pick);
