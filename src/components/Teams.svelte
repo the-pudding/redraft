@@ -5,22 +5,15 @@
 
   export let data;
 
+  const first = data.filter((d) => d.pick <= 30);
+
   let activeTeam = undefined;
 
-  const averages = groups(data, (d) => d.pick).map(([pick, players]) => ({
-    pick
-    // avg: mean(players, (d) => d.moved)
-  }));
-
-  const grouped = groups(data, (d) => d.team);
+  const grouped = groups(first, (d) => d.team);
   const teams = grouped.map(([abbr, players]) => ({
     abbr,
     players,
     pct_correct: mean(players.map((d) => (!!d.upgrade ? 0 : 1)))
-    // pick: mean(players.map((d) => d.pick)),
-    // rank_blend: mean(players.map((d) => d.rank_blend)),
-    // moved: mean(players.map((d) => d.moved)),
-    // avg: mean(players.map((d) => d.moved - averages.find((v) => v.pick === d.pick).avg))
   }));
 
   const x = scaleLinear()
@@ -78,6 +71,7 @@
     width: var(--pct);
     outline: 0.25em solid var(--color-fg);
     position: relative;
+    min-width: 10em;
   }
 
   button {

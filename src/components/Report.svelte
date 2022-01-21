@@ -23,7 +23,7 @@
     return (
       fn(a.grade[0], b.grade[0]) ||
       fn(order[a.grade[1]], order[b.grade[1]]) ||
-      fn(a.potential, b.potential)
+      fn(a.upgradeCount, b.upgradeCount)
     );
   };
 
@@ -31,7 +31,6 @@
 
   let rows = data.map((d) => ({
     ...d,
-    potential: Math.round(d.potential),
     style: `background-color: ${colors[d.grade]}`
   }));
 
@@ -49,8 +48,8 @@
       sortFn: customSort
     },
     {
-      label: "Potential",
-      prop: "potential",
+      label: "Better Players",
+      prop: "upgradeCount",
       type: "number"
     },
     {

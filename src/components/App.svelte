@@ -41,6 +41,11 @@
 <section id="intro">
   <div class="prose">
     <h1>The NBA Redrafted <mark>2.0</mark></h1>
+    <p class="byline">
+      By <a href="https://pudding.cool/authors/russell-goldenberg" target="_blank"
+        >Russell Goldenberg</a
+      > | Feb. 2022
+    </p>
     <p>
       Five years ago we <a href="https://pudding.cool/2017/03/redraft/" target="_blank"
         >redrafted the NBA</a
@@ -77,15 +82,24 @@
 
 <section id="teams">
   <div class="prose">
-    <h2>Drafting is hard. Here is how often each team selects the best player available.</h2>
+    <h2>
+      Drafting is hard. Here is how often each team selects the best player available in the first
+      round.
+    </h2>
+    <p class="dek">Select a team below to see their player report card.</p>
   </div>
   <Teams {data} />
   <div class="prose">
     <p>
-      There are a couple contributing factors other than drafting prowess that make for teams like
-      the Spurs apparent dominance. First, teams that draft higher on average (like the Clippers)
-      have more room for error since there are more players they are passing on. Second, teams might
-      just be better at player development.
+      A draftee's grade is based on how big of a gap there is between their score and the best
+      player available. More recent draftees will have less extremes scores since their best
+      production seasons are still ahead of them. For example, while Markelle Fultz appears to be a
+      bust, he is being compared to Tatum/Mitchell, who still have their best years ahead of them,
+      which will likely widen that score gap.
+    </p>
+    <p>
+      Teams that draft higher on average (like the Clippers) have more room for error since there
+      are more players they are passing on.
     </p>
   </div>
 </section>
@@ -119,5 +133,15 @@
 <style>
   #method .prose p {
     font-size: 1.25em;
+  }
+
+  .byline {
+    font-size: 1em;
+    color: var(--color-gray-500);
+  }
+
+  .dek {
+    font-size: 1em;
+    color: var(--color-gray-500);
   }
 </style>
