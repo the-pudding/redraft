@@ -55,7 +55,7 @@ a {
 
 
 .prose {
-	max-width: 40rem;
+	max-width: 30rem;
 	margin: 1rem auto;
 }
 
@@ -67,20 +67,38 @@ a {
 }
 
 .prose h1 {
-	font-size: 3em;
+	font-size: 2em;
 	text-transform: uppercase;
 }
 
 .prose h2 {
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 .prose p {
-	font-size: 1.5em;
+	font-size: 1em;
 }
 
 section {
 	max-width: 90%;
 	margin: 2rem auto;
 	margin-bottom: 4rem;
+}
+
+@media only screen and (min-width: 768px) {
+	.prose {
+		max-width: 40rem;
+	}
+	
+	.prose h1 {
+	font-size: 3em;
+	}
+
+	.prose h2 {
+		font-size: 2em;
+	}
+
+	.prose p {
+		font-size: 1.5em;
+	}
 }

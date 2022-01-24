@@ -25,7 +25,7 @@
       type: "text"
     },
     {
-      label: "Normalized Production",
+      label: "Normalized Score",
       prop: "score",
       sort: false,
       type: "number"

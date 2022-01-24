@@ -3,14 +3,13 @@
   import { writable } from "svelte/store";
   import WIP from "$components/helpers/WIP.svelte";
   import Scatter from "$components/Scatter.svelte";
-  import Table from "$components/Table.svelte";
   import Could from "$components/Could.svelte";
   import Histogram from "$components/Histogram.svelte";
   import Teams from "$components/Teams.svelte";
   import Method from "$components/Method.svelte";
   import TeamSelect from "$components/TeamSelect.svelte";
 
-  // import Footer from "$components/Footer.svelte";
+  import Footer from "$components/Footer.svelte";
   import data from "$data/clean.js";
   import locate from "$utils/locate.js";
   import getFandom from "$utils/getFandom.js";
@@ -49,12 +48,12 @@
     <p>
       Five years ago we <a href="https://pudding.cool/2017/03/redraft/" target="_blank"
         >redrafted the NBA</a
-      > with data. We figured it was time to add more recent drafts and ask some new questions.
+      > with data. We figured it was time to update with more recent drafts, and ask some new questions.
     </p>
     {#if fan}
       <p>
-        So let's begin. I'm guessing you are a fan of the {fan.name}? No shame in admitting it. But
-        if not...
+        So let's begin. Hmm...I'm guessing you are a fan of the <strong>{fan.name}?</strong> No shame
+        in admitting it. But if not...
       </p>
       <p><TeamSelect bind:team={selectedTeam} /></p>
     {/if}
@@ -73,7 +72,7 @@
   <div class="prose">
     <p>
       Where do these swaps come from? The short version: each player gets a score from a blend of
-      four advanced stats based on their top five seasons. An upgrade pick is player that was
+      four advanced stats based on their top five seasons. The upgrade pick is a player that was
       drafted lower but has a higher score. Squads are made up of the biggest score upgrades. See
       the <a href="#method">method section</a> for more details.
     </p>
@@ -94,12 +93,12 @@
       A draftee's grade is based on how big of a gap there is between their score and the best
       player available. More recent draftees will have less extremes scores since their best
       production seasons are still ahead of them. For example, while Markelle Fultz appears to be a
-      bust, he is being compared to Tatum/Mitchell, who still have their best years ahead of them,
-      which will likely widen that score gap.
+      bust, he is being compared to Tatum/Mitchell, who will likely widen that score gap as they hit
+      their primes.
     </p>
     <p>
-      Teams that draft higher on average (like the Clippers) have more room for error since there
-      are more players they are passing on.
+      Teams like the Clippers tend to draft higher on average. This makes it a bit harder for them
+      than other teams to always pick right, but that can only explain away some of their results.
     </p>
   </div>
 </section>
@@ -107,9 +106,12 @@
 <!-- <Scatter {data} /> -->
 <section id="histogram">
   <div class="prose">
-    <h2>The biggest busts and steals for every NBA draft class through 2017</h2>
+    <h2>The over and underacheivers of every modern NBA draft class through 2017</h2>
   </div>
   <Histogram {data} />
+  <div class="prose">
+    <p>Tk some chatter.</p>
+  </div>
 </section>
 
 <section id="method">
@@ -125,10 +127,12 @@
       in the Could Have Been teams were first selected from top 10 picks, then searched beyond those
       if there weren't enough.
     </p>
-    <p>TBD on report grade calculation.</p>
+    <p>TK report grade calculation.</p>
     <Method {data} />
   </div>
 </section>
+
+<Footer />
 
 <style>
   #method .prose p {

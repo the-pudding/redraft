@@ -35,14 +35,14 @@
           >
             <img src="assets/logos/{abbr.toLowerCase()}.svg" alt="{abbr} logo" />
             <span class="mascot">{mascot(abbr)}</span>
+            {#if i === 0}
+              <span class="percent"
+                >pick the best player <strong>{Math.round(pct_correct * 100)}%</strong> of the time</span
+              >
+            {:else}
+              <span class="percent">{Math.round(pct_correct * 100)}%</span>
+            {/if}
           </button>
-          {#if i === 0}
-            <span class="percent"
-              >pick the best player <strong>{Math.round(pct_correct * 100)}%</strong> of the time</span
-            >
-          {:else}
-            <span class="percent">{Math.round(pct_correct * 100)}%</span>
-          {/if}
         </div>
         <div class="below">
           <Report data={data.filter((d) => d.team === abbr && d.pick <= 30)} />
@@ -67,14 +67,23 @@
     line-height: 1;
   }
 
+  .team:nth-of-type(even) .above {
+    background-color: var(--color-gray-50);
+  }
+
+  .team:nth-of-type(odd) .above {
+    background-color: var(--color-gray-100);
+  }
+
   .above {
     width: var(--pct);
-    outline: 0.25em solid var(--color-fg);
+    /* outline: 0.25em solid var(--color-fg); */
+    /* border-bottom: 4px solid var(--color-fg); */
     position: relative;
-    min-width: 10em;
   }
 
   button {
+    /* background: var(--color-bg); */
     background: none;
     padding: 0 0.5em;
     margin: 0;
@@ -82,14 +91,24 @@
     display: inline-block;
     white-space: nowrap;
     width: 100%;
+    min-width: 10em;
     text-align: left;
-    /* transform: translate(-10em, 0); */
     position: relative;
     font-weight: var(--bold);
   }
 
+  .team:hover .percent {
+    color: var(--color-fg);
+    transform: translate(100%, -50%) scale(1.5);
+  }
+
+  .team:hover:first-of-type .percent {
+    color: var(--color-fg);
+    transform: translate(100%, -50%);
+  }
+
   button:hover {
-    background: var(--color-gray-100);
+    background: var(--color-gray-300);
   }
 
   img {
@@ -108,6 +127,7 @@
     top: 50%;
     right: -1em;
     transform: translate(100%, -50%);
+    transform-origin: 50% 50%;
     font-weight: var(--bold);
   }
 
@@ -116,7 +136,7 @@
     color: var(--color-fg);
   }
 
-  li:first-of-type .percent {
+  .team:first-of-type .percent {
     transform: translate(100%, -50%);
     width: 10em;
     text-align: left;
