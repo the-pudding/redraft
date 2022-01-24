@@ -1,57 +1,56 @@
 {
-  ".svelte-kit/build/runtime/internal/start.js": {
-    "file": "start-4953de5a.js",
-    "src": ".svelte-kit/build/runtime/internal/start.js",
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "start-c3befffa.js",
+    "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_vendor-f78ff912.js"
+      "_vendor-43d9517a.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
-      ".svelte-kit/build/components/error.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
       "src/routes/index.svelte"
-    ],
-    "css": [
-      "assets/start-c446e5f0.css"
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-842df266.js",
+    "file": "pages/__layout.svelte-ebe0781f.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-f78ff912.js"
+      "_vendor-43d9517a.js",
+      "_wordmark-0849a013.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-5955aa4e.css"
+      "assets/pages/__layout.svelte-55dfa468.css"
     ]
   },
-  ".svelte-kit/build/components/error.svelte": {
-    "file": "error.svelte-ab74fd74.js",
-    "src": ".svelte-kit/build/components/error.svelte",
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "error.svelte-ae73e4dd.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-f78ff912.js"
+      "_vendor-43d9517a.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-fce0fef1.js",
+    "file": "pages/index.svelte-7df402a1.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_vendor-f78ff912.js"
+      "_vendor-43d9517a.js",
+      "_wordmark-0849a013.js"
     ],
     "css": [
-      "assets/pages/index.svelte-9fd64509.css"
+      "assets/pages/index.svelte-3f7840c9.css"
     ]
   },
-  "_vendor-f78ff912.js": {
-    "file": "chunks/vendor-f78ff912.js",
-    "css": [
-      "assets/vendor-11530600.css"
-    ]
+  "_vendor-43d9517a.js": {
+    "file": "chunks/vendor-43d9517a.js"
+  },
+  "_wordmark-0849a013.js": {
+    "file": "chunks/wordmark-0849a013.js"
   }
 }
