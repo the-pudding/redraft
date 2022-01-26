@@ -2,7 +2,6 @@
   import { onMount, setContext } from "svelte";
   import { writable } from "svelte/store";
   import WIP from "$components/helpers/WIP.svelte";
-  import Scatter from "$components/Scatter.svelte";
   import Could from "$components/Could.svelte";
   import Histogram from "$components/Histogram.svelte";
   import Teams from "$components/Teams.svelte";
