@@ -8,11 +8,11 @@
   import Teams from "$components/Teams.svelte";
   import Method from "$components/Method.svelte";
   import TeamSelect from "$components/TeamSelect.svelte";
-
   import Footer from "$components/Footer.svelte";
   import data from "$data/clean.js";
   import locate from "$utils/locate.js";
   import getFandom from "$utils/getFandom.js";
+  import copy from "$data/doc.json";
 
   const MIN = 1000;
   let location;
@@ -46,14 +46,12 @@
       > | Feb. 2022
     </p>
     <p>
-      Five years ago we <a href="https://pudding.cool/2017/03/redraft/" target="_blank"
-        >redrafted the NBA</a
-      > with data. We figured it was time to update with more recent drafts, and ask some new questions.
+      {@html copy.intro1}
     </p>
     {#if fan}
       <p>
-        So let’s begin. Hmm...I’m guessing you are a fan of the <strong>{fan.name}?</strong> No shame
-        in admitting it. But if not...
+        {@html copy.intro2a} <strong>{fan.name}?</strong>
+        {@html copy.intro2b}
       </p>
       <p><TeamSelect bind:team={selectedTeam} /></p>
     {/if}
@@ -63,7 +61,8 @@
 <section id="could">
   <div class="prose">
     <h2>
-      Hindsight is 20/20, but it probably stings a bit to see what could have been for {$teamData.city}.
+      {@html copy.couldTitle}
+      {$teamData.city}.
     </h2>
   </div>
   {#if $teamData.abbr}
@@ -71,10 +70,7 @@
   {/if}
   <div class="prose">
     <p>
-      Where do these swaps come from? The short version: each player gets a score from a blend of
-      four advanced stats based on their top five seasons. The upgrade pick is a player that was
-      drafted lower but has a higher score. Squads are made up of the biggest score upgrades. See
-      the <a href="#method">method section</a> for more details.
+      {@html copy.could1}
     </p>
   </div>
 </section>
@@ -82,23 +78,14 @@
 <section id="teams">
   <div class="prose">
     <h2>
-      Drafting is hard. Here is how often each team selects the best player available in the first
-      round.
+      {@html copy.teamsTitle}
     </h2>
-    <p class="dek">Select a team below to see their player report card.</p>
+    <p class="dek">{@html copy.teamsDek}</p>
   </div>
   <Teams {data} />
   <div class="prose">
     <p>
-      A draftee’s grade is based on how big of a gap there is between their score and the best
-      player available. More recent draftees will have less extremes scores since their best
-      production seasons are still ahead of them. For example, while Markelle Fultz appears to be a
-      bust, he is being compared to Tatum/Mitchell, who will likely widen that score gap as they hit
-      their primes.
-    </p>
-    <p>
-      Teams like the Clippers tend to draft higher on average. This makes it a bit harder for them
-      than other teams to always pick right, but that can only explain away some of their results.
+      {@html copy.teams1}
     </p>
   </div>
 </section>
@@ -106,11 +93,11 @@
 <!-- <Scatter {data} /> -->
 <section id="histogram">
   <div class="prose">
-    <h2>The over and underacheivers of every modern NBA draft class through 2017</h2>
+    <h2>{@html copy.histogramTitle}</h2>
   </div>
   <Histogram {data} />
   <div class="prose">
-    <p>Tk some chatter.</p>
+    <p>{@html copy.histogram1}</p>
   </div>
 </section>
 
@@ -118,30 +105,9 @@
   <div class="prose">
     <h2>Data and Methods</h2>
     <p>
-      Data from <a href="https://basketball-reference.com" target="_blank">Basketball Reference</a>.
-      The four advanced stats used to create a player’s score were
-      <a
-        href="https://www.basketball-reference.com/about/glossary.html#:~:text=VORP"
-        target="_blank">VORP</a
-      >,
-      <a href="https://www.basketball-reference.com/about/glossary.html#:~:text=WS" target="_blank"
-        >Win Shares</a
-      >,
-      <a
-        href="https://fivethirtyeight.com/features/introducing-raptor-our-new-metric-for-the-modern-nba/"
-        target="_blank">RAPTOR WAR</a
-      >, and
-      <a
-        href="https://docs.google.com/spreadsheets/d/1EIZvj_3-9SZULWomHz54V1CPL092j70u_0vUhoEEaIk/edit#gid=0"
-        target="_blank">Wins Added</a
-      >. No all-in-one advanced stat is perfect, so I chose a blend that satisfied the eye test (see
-      <a href="#method-table">table below</a>).Each stat was normalized to a 1-100 then averaged
-      together to create a master scale. Scores were based on a player’s top five seasons to find
-      the balance between prime and longevity (an average NBA career is 4.5 years). Upgrade choices
-      in the Could Have Been teams were first selected from top 10 picks, then searched beyond those
-      if there weren’t enough.
+      {@html copy.method1}
     </p>
-    <p>TK report grade calculation.</p>
+    <p>{@html copy.method2}</p>
     <Method {data} />
   </div>
 </section>

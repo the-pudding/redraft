@@ -13,14 +13,15 @@
   const teams = grouped.map(([abbr, players]) => ({
     abbr,
     players,
-    pct_correct: mean(players.map((d) => (!!d.upgrade ? 0 : 1)))
+    pct_correct: mean(players.map((d) => (!!d.upgrade ? 0 : 1))),
+    avg_pick: Math.round(mean(players.map((d) => d.pick)))
   }));
 
   const x = scaleLinear()
     .domain([0, max(teams, (d) => d.pct_correct)])
     .range([0, 100]);
 
-  teams.sort((a, b) => descending(a.pct_correct, b.pct_correct));
+  teams.sort((a, b) => descending(a.pct_correct, b.pct_correct)) || ascending(a.abbr, b.abbr);
 </script>
 
 <figure>

@@ -70,17 +70,10 @@
 
 <style>
   footer {
-    background-color: var(--color-fg);
-    color: var(--color-bg);
     font-family: var(--sans);
     padding: 3em 1em;
-    margin-top: 3em;
-  }
-
-  a,
-  a:visited,
-  a:hover {
-    color: var(--color-bg);
+    margin-top: 6em;
+    border-top: 0.25em solid var(--color-fg);
   }
 
   .stories {
