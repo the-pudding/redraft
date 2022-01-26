@@ -34,12 +34,20 @@
 </script>
 
 <div id="method-table">
-  <h3>Top 50 Players Since the 1989 Draft</h3>
+  <h3>Appendix: Top 50 Players Since the 1989 Draft</h3>
+  <p>
+    A player’s normalized score is a blend of four advanced stats based on their top five seasons,
+    then scaled to the 🐐 who is #1 in every stat.
+  </p>
   <SortTable {columns} {rows} />
 </div>
 
 <style>
   div {
     padding-top: 2em;
+  }
+
+  p {
+    font-size: 1em;
   }
 </style>
