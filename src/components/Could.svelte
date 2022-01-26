@@ -102,8 +102,8 @@
     content: "";
     display: block;
     position: absolute;
-    top: calc(var(--border-size) * 2);
-    left: calc(var(--border-size) * 2);
+    top: calc(var(--border-size) * 1);
+    left: calc(var(--border-size) * 1);
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -113,7 +113,7 @@
 
   .inner {
     position: relative;
-    padding: 2em;
+    padding: 1em 0;
     background: var(--color-bg);
     color: var(--color-fg);
   }
@@ -129,6 +129,8 @@
     align-items: center;
     justify-content: center;
     font-size: 1em;
+    padding: 0;
+    transform: translateX(-0.5em);
   }
 
   .team span {
@@ -138,7 +140,7 @@
   .team .mascot {
     font-weight: var(--bold);
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1.125em;
   }
 
   ul {
@@ -150,10 +152,11 @@
   li {
     display: flex;
     align-items: center;
-    font-size: 1em;
-    padding: 1em;
+    padding: 0.25em 0;
+    font-size: 0.9em;
     line-height: 1;
-    width: 50%;
+    width: 100%;
+    justify-content: center;
   }
 
   li span {
@@ -170,8 +173,8 @@
 
   .headshot {
     display: inline-block;
-    width: 5rem;
-    height: 5rem;
+    width: 3.5em;
+    height: 3.5em;
     border-radius: 50%;
     outline: calc(var(--border-size) * 0.5) solid var(--color-fg);
   }
@@ -192,7 +195,7 @@
   }
 
   .swap {
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: var(--color-gray-400);
     align-items: center;
     display: flex;
@@ -212,5 +215,40 @@
     height: 100%;
     border-radius: 50%;
     filter: grayscale(100%);
+  }
+
+  @media only screen and (min-width: 850px) {
+    .inner {
+      padding: 2em;
+    }
+
+    .headshot {
+      width: 5em;
+      height: 5em;
+    }
+
+    li {
+      padding: 1em;
+      font-size: 1em;
+      width: 50%;
+      justify-content: flex-start;
+    }
+
+    .team {
+      transform: translate(-0.5em, -1.25em);
+    }
+
+    .team .mascot {
+      font-size: 1.5em;
+    }
+
+    .squad:before {
+      top: calc(var(--border-size) * 2);
+      left: calc(var(--border-size) * 2);
+    }
+
+    .swap {
+      transform: translateY(-50%);
+    }
   }
 </style>

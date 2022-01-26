@@ -36,12 +36,11 @@
             <img src="assets/logos/{abbr.toLowerCase()}.svg" alt="{abbr} logo" />
             <span class="mascot">{mascot(abbr)}</span>
             {#if i === 0}
-              <span class="percent"
-                >pick the best player <strong>{Math.round(pct_correct * 100)}%</strong> of the time</span
+              <span class="percent-first"
+                >pick the best player {Math.round(pct_correct * 100)}% of the time</span
               >
-            {:else}
-              <span class="percent">{Math.round(pct_correct * 100)}%</span>
             {/if}
+            <span class="percent">{Math.round(pct_correct * 100)}%</span>
           </button>
         </div>
         <div class="below">
@@ -55,8 +54,9 @@
 <style>
   figure {
     position: relative;
-    width: 90%;
-    padding: 0 0.25em;
+    padding: 0;
+    padding-right: 2em;
+    width: 100%;
     max-width: 60em;
     margin: 4em auto;
   }
@@ -102,7 +102,7 @@
     transform: translate(100%, -50%) scale(1.5);
   }
 
-  .team:hover:first-of-type .percent {
+  .team:hover .percent-first {
     color: var(--color-fg);
     transform: translate(100%, -50%);
   }
@@ -118,7 +118,8 @@
     vertical-align: middle;
   }
 
-  .percent {
+  .percent,
+  .percent-first {
     color: var(--color-gray-500);
     font-size: 12px;
     display: none;
@@ -131,12 +132,16 @@
     font-weight: var(--bold);
   }
 
-  .percent strong {
+  .percent-first {
+    display: none;
+  }
+
+  .percent-frst strong {
     font-weight: var(--bold);
     color: var(--color-fg);
   }
 
-  .team:first-of-type .percent {
+  .team .percent-first {
     transform: translate(100%, -50%);
     width: 10em;
     text-align: left;
@@ -159,5 +164,20 @@
   .visible button {
     background: var(--color-fg);
     color: var(--color-bg);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    figure {
+      width: 60%;
+      padding: 0;
+      padding-right: 4em;
+    }
+    .percent-first {
+      display: inline-block;
+    }
+
+    .team:first-of-type .percent {
+      display: none;
+    }
   }
 </style>

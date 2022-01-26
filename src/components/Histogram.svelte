@@ -46,22 +46,24 @@
   </div>
 </div>
 
-<div class="drafts">
-  {#each drafts as [year, bins]}
-    <div class="draft" class:visible={year === activeYear}>
-      <h3>{year} Draft Class</h3>
-      <div class="bins">
-        {#each bins as [bin, players]}
-          <div class="bin">
-            {#each players as { name, pick }}
-              <p>{name}</p>
-            {/each}
-          </div>
-        {/each}
+<figure>
+  <div class="drafts">
+    {#each drafts as [year, bins]}
+      <div class="draft" class:visible={year === activeYear}>
+        <h3>{year} Draft Class</h3>
+        <div class="bins">
+          {#each bins as [bin, players]}
+            <div class="bin">
+              {#each players as { name, pick }}
+                <p>{name}</p>
+              {/each}
+            </div>
+          {/each}
+        </div>
       </div>
-    </div>
-  {/each}
-</div>
+    {/each}
+  </div>
+</figure>
 
 <style>
   .ui {
@@ -98,35 +100,22 @@
 
   .bins {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
   }
 
   .bin {
-    width: 10em;
-    margin: 0 0.5em;
+    margin-bottom: 1em;
     position: relative;
     display: flex;
     flex-wrap: wrap;
   }
 
-  .bin:nth-of-type(3) {
-    width: 20em;
-  }
-
-  .bin:nth-of-type(3) p {
-    width: calc(50% - 0.5em);
-  }
-
   .bin:before {
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    transform: translate(0, -100%);
-    padding: 0.5em;
+    margin: 0;
     font-size: 14px;
-    text-align: center;
+    /* text-align: center; */
     font-weight: var(--bold);
   }
 
@@ -135,11 +124,11 @@
     white-space: nowrap;
     overflow: hidden;
     margin: 2px;
-    padding: 0.25em;
+    padding: 0.25rem;
     font-weight: var(--bold);
     text-overflow: ellipsis;
     border: 0.2em solid black;
-    width: 100%;
+    /* width: 10em; */
     text-align: center;
     user-select: none;
   }
@@ -195,6 +184,48 @@
   }
 
   .bin:nth-of-type(3) {
+    display: none;
     font-size: 10px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .bins {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .bin {
+      width: 10em;
+      margin: 0 0.5em;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .bin:nth-of-type(3) {
+      display: flex;
+      width: 20em;
+    }
+
+    .bin:nth-of-type(3) p {
+      width: calc(50% - 0.5em);
+    }
+
+    .bin:before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: translate(0, -100%);
+      padding: 0.5em;
+      font-size: 14px;
+      text-align: center;
+      font-weight: var(--bold);
+    }
+
+    p {
+      width: 100%;
+    }
   }
 </style>
