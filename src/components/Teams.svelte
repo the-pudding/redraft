@@ -137,11 +137,6 @@
     display: none;
   }
 
-  .percent-frst strong {
-    font-weight: var(--bold);
-    color: var(--color-fg);
-  }
-
   .team .percent-first {
     transform: translate(100%, -50%);
     width: 10em;

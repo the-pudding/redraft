@@ -75,26 +75,36 @@ Array.from(drafts).forEach(([year]) => {
 
 const getUpgrade = (p) => {
 	const players = drafts.get(p.year);
-	const matches = players.filter(
+	const match = players.find(
 		(other) =>
-			// !upgraded[`${other.id}${p.team}`] &&
+			!upgraded[`${other.id}${p.team}`] &&
 			other.team !== p.team &&
 			other.pick > p.pick &&
 			other.norm_blend > p.norm_blend
 	);
-	return matches;
+	if (match) upgraded[`${match.id}${p.team}`] = true;
+	return match || {};
 };
 
-// const upgraded = {};
+const getBetterCount = p => {
+	const players = drafts.get(p.year);
+	const matches = players.filter(
+		(other) =>
+			other.team !== p.team &&
+			other.pick > p.pick &&
+			other.norm_blend > p.norm_blend
+	);
+	return matches.length;
+};
+
+const upgraded = {};
 
 clean.forEach(d => {
-	const upgrades = getUpgrade(d);
-	const u = upgrades.length ? upgrades[0] : undefined;
-
-	d.upgradeCount = upgrades.length;
-	d.upgrade = u ? u.id : undefined;
-	d.upgradeName = u ? u.name : undefined;
-	d.potential = u ? +(u.norm_blend - d.norm_blend).toFixed(1) : 0;
+	const u = getUpgrade(d);
+	d.betterCount = getBetterCount(d);
+	d.upgrade = u.id;
+	d.upgradeName = u.name;
+	d.potential = u.id ? +(u.norm_blend - d.norm_blend).toFixed(1) : 0;
 });
 
 

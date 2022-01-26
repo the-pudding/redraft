@@ -23,7 +23,7 @@
     return (
       fn(a.grade[0], b.grade[0]) ||
       fn(order[a.grade[1]], order[b.grade[1]]) ||
-      fn(a.upgradeCount, b.upgradeCount)
+      fn(a.betterCount, b.betterCount)
     );
   };
 
@@ -49,7 +49,7 @@
     },
     {
       label: "Better Players",
-      prop: "upgradeCount",
+      prop: "betterCount",
       type: "number"
     },
     {
