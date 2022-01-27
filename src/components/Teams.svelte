@@ -1,13 +1,12 @@
 <script>
   import { extent, scaleLinear, max, mean, group, groups, ascending, descending } from "d3";
   import Report from "$components/Report.svelte";
+  import Icon from "$components/helpers/Icon.svelte";
   import { mascot } from "$utils/teamLookup.js";
 
   export let data;
 
   const first = data.filter((d) => d.pick <= 30);
-
-  let activeTeam = undefined;
 
   const grouped = groups(first, (d) => d.team);
   const teams = grouped.map(([abbr, players]) => ({
@@ -22,6 +21,8 @@
     .range([0, 100]);
 
   teams.sort((a, b) => descending(a.pct_correct, b.pct_correct)) || ascending(a.abbr, b.abbr);
+
+  let activeTeam;
 </script>
 
 <figure>
@@ -35,7 +36,10 @@
             }}
           >
             <img src="assets/logos/{abbr.toLowerCase()}.svg" alt="{abbr} logo" />
-            <span class="mascot">{mascot(abbr)}</span>
+            <span class="mascot"
+              >{mascot(abbr)}
+              {#if i === 0}<em>tap to see pick grades</em>{/if}</span
+            >
             {#if i === 0}
               <span class="percent-first"
                 >pick the best player {Math.round(pct_correct * 100)}% of the time</span
@@ -122,7 +126,7 @@
   .percent,
   .percent-first {
     color: var(--color-gray-500);
-    font-size: 12px;
+    font-size: 14px;
     display: none;
     position: absolute;
     display: inline-block;
@@ -160,6 +164,19 @@
   .visible button {
     background: var(--color-fg);
     color: var(--color-bg);
+  }
+
+  em {
+    display: none;
+    margin-left: 0.5em;
+    color: var(--color-gray-700);
+    font-weight: normal;
+    font-size: 12px;
+    transform: translateY(-1px);
+  }
+
+  .visible em {
+    display: none;
   }
 
   @media only screen and (min-width: 1024px) {

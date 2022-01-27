@@ -1,11 +1,9 @@
 <script>
-  import { getContext } from "svelte";
   import { groups, ascending, descending } from "d3";
   import Icon from "$components/helpers/Icon.svelte";
   export let data;
   export let metric = "norm_blend";
-
-  const { teamData } = getContext("App");
+  export let selectedTeam;
 
   const groupedTeams = groups(data, (d) => d.team);
   const teams = groupedTeams.map(([abbr, all]) => {
@@ -32,7 +30,7 @@
 
   teams.sort((a, b) => ascending(a.abbr, b.abbr));
 
-  $: team = teams.find((d) => d.abbr === $teamData.abbr);
+  $: team = teams.find((d) => d.abbr === selectedTeam.abbr);
 </script>
 
 <figure>
@@ -41,21 +39,6 @@
       <ul>
         {#each team.players as { id, year, pick, norm_blend, name, upgrade, image }}
           <li>
-            <div class="downgrade">
-              <span class="player">
-                <span class="headshot">
-                  <img src="assets/headshots/{image ? id : 'default'}.png" alt="{name} headshot" />
-                </span>
-                <span class="name">
-                  <!-- #{pick} -->
-                  {name}
-                </span>
-              </span>
-            </div>
-            <div class="swap">
-              <span class="year">{year}</span>
-              <Icon name="refresh-cw" />
-            </div>
             <div class="upgrade">
               <span class="player">
                 <span class="headshot">
@@ -70,12 +53,30 @@
                 </span>
               </span>
             </div>
+            <div class="swap">
+              <span class="year">{year}</span>
+              <Icon name="refresh-cw" />
+            </div>
+            <div class="downgrade">
+              <span class="player">
+                <span class="headshot">
+                  <img src="assets/headshots/{image ? id : 'default'}.png" alt="{name} headshot" />
+                </span>
+                <span class="name">
+                  <!-- #{pick} -->
+                  {name}
+                </span>
+              </span>
+            </div>
           </li>
         {/each}
         <li class="team">
-          <img src="assets/logos/{$teamData.abbr.toLowerCase()}.svg" alt="{$teamData.name} logo" />
+          <img
+            src="assets/logos/{selectedTeam.abbr.toLowerCase()}.svg"
+            alt="{selectedTeam.name} logo"
+          />
           <p class="place">
-            <span class="city">The {$teamData.city}</span>
+            <span class="city">The {selectedTeam.city}</span>
             <span class="mascot"> Could Have Beens</span>
           </p>
         </li>

@@ -77,7 +77,7 @@
   }
 
   td {
-    border-top: 1px solid currentColor;
+    border-top: 1px solid var(--color-bg);
   }
 
   th button {

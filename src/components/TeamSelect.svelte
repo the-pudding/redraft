@@ -2,9 +2,11 @@
   import { ascending } from "d3";
   import teams from "$data/teams.json";
 
-  teams.sort((a, b) => ascending(a.name, b.name));
-  export let team = { name: "", abbr: "" };
-  let value = "";
+  teams.sort((a, b) => ascending(a.mascot, b.mascot));
+  export let team = {};
+  export let fan;
+  let value = fan;
+
   $: match = teams.find((t) => t.abbr === value) || {};
   $: team.name = match.name;
   $: team.abbr = match.abbr;
@@ -12,8 +14,14 @@
 </script>
 
 <select bind:value>
-  <option value="">Choose a team</option>
-  {#each teams as { name, abbr }}
-    <option value={abbr}>{name}</option>
+  <option value="" />
+  {#each teams as { abbr, mascot }}
+    <option value={abbr}>{mascot}</option>
   {/each}
 </select>
+
+<style>
+  select {
+    padding: 0 0.5em;
+  }
+</style>

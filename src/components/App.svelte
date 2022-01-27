@@ -16,14 +16,9 @@
   const MIN = 1000;
   let location;
   let selectedTeam = {};
-  let teamData = writable({});
+  let fan = { name: "New York Knicks", abbr: "NYK", city: "New York" };
 
-  $: fan = location ? getFandom(location) : {};
-  $: $teamData.name = selectedTeam.name ? selectedTeam.name : fan.name;
-  $: $teamData.abbr = selectedTeam.abbr ? selectedTeam.abbr : fan.abbr;
-  $: $teamData.city = selectedTeam.city ? selectedTeam.city : fan.city;
-  $: context = { teamData };
-  $: setContext("App", context);
+  // $: if (location) fan = getFandom(location);
 
   onMount(async () => {
     try {
@@ -49,10 +44,9 @@
     </p>
     {#if fan}
       <p>
-        {@html copy.intro2a} <strong>{fan.name}?</strong>
-        {@html copy.intro2b}
+        {@html copy.intro2A} <strong>{fan.name}?</strong>
+        {@html copy.intro2B}
       </p>
-      <p><TeamSelect bind:team={selectedTeam} /></p>
     {/if}
   </div>
 </section>
@@ -61,11 +55,12 @@
   <div class="prose">
     <h2>
       {@html copy.couldTitle}
-      {$teamData.city}.
+      <TeamSelect bind:team={selectedTeam} fan={fan.abbr} />
     </h2>
+    <p class="dek">{@html copy.couldDekA} {selectedTeam.city} {@html copy.couldDekB}</p>
   </div>
-  {#if $teamData.abbr}
-    <Could {data} />
+  {#if selectedTeam.name}
+    <Could {data} {selectedTeam} />
   {/if}
   <div class="prose">
     <p>
