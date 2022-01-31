@@ -30,6 +30,10 @@
 
   teams.sort((a, b) => ascending(a.abbr, b.abbr));
 
+  // teams.forEach((t) => {
+  //   const n = t.players.filter((d) => !d.image);
+  //   n.forEach((d) => console.log(d.id, d.name));
+  // });
   $: team = teams.find((d) => d.abbr === selectedTeam.abbr);
 </script>
 
@@ -39,6 +43,21 @@
       <ul>
         {#each team.players as { id, year, pick, norm_blend, name, upgrade, image }}
           <li>
+            <div class="downgrade">
+              <span class="player">
+                <span class="headshot">
+                  <img src="assets/headshots/{image ? id : 'default'}.png" alt="{name} headshot" />
+                </span>
+                <span class="name">
+                  <!-- #{pick} -->
+                  {name}
+                </span>
+              </span>
+            </div>
+            <div class="swap">
+              <span class="year">{year}</span>
+              <Icon name="arrow-right" />
+            </div>
             <div class="upgrade">
               <span class="player">
                 <span class="headshot">
@@ -50,21 +69,6 @@
                 <span class="name">
                   <!-- #{upgrade.pick} -->
                   {upgrade.name}
-                </span>
-              </span>
-            </div>
-            <div class="swap">
-              <span class="year">{year}</span>
-              <Icon name="refresh-cw" />
-            </div>
-            <div class="downgrade">
-              <span class="player">
-                <span class="headshot">
-                  <img src="assets/headshots/{image ? id : 'default'}.png" alt="{name} headshot" />
-                </span>
-                <span class="name">
-                  <!-- #{pick} -->
-                  {name}
                 </span>
               </span>
             </div>

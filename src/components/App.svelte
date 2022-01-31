@@ -18,7 +18,7 @@
   let selectedTeam = {};
   let fan = { name: "New York Knicks", abbr: "NYK", city: "New York" };
 
-  // $: if (location) fan = getFandom(location);
+  $: if (location) fan = getFandom(location) || fan;
 
   onMount(async () => {
     try {
@@ -57,7 +57,10 @@
       {@html copy.couldTitle}
       <TeamSelect bind:team={selectedTeam} fan={fan.abbr} />
     </h2>
-    <p class="dek">{@html copy.couldDekA} {selectedTeam.city} {@html copy.couldDekB}</p>
+    <p class="dek">
+      {selectedTeam.city}’s <mark class="alt">actual picks</mark> and the
+      <mark>better players</mark> available.
+    </p>
   </div>
   {#if selectedTeam.name}
     <Could {data} {selectedTeam} />
@@ -98,10 +101,9 @@
 <section id="method">
   <div class="prose">
     <h2>Data and Methods</h2>
-    <p>
-      {@html copy.method1}
-    </p>
+    <p>{@html copy.method1}</p>
     <p>{@html copy.method2}</p>
+    <p>{@html copy.method3}</p>
     <Method {data} />
   </div>
 </section>

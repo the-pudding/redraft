@@ -35,4 +35,26 @@
   <meta name="robots" content="max-image-preview:large" />
 
   <link rel="canonical" href="{url}/" />
+
+  <link
+    rel="preload"
+    href="https://pudding.cool/assets/fonts/rubik/rubik-v14-latin-regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="https://pudding.cool/assets/fonts/rubik/rubik-v14-latin-600.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="https://pudding.cool/assets/fonts/rubik/rubik-v14-latin-800.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
 </svelte:head>

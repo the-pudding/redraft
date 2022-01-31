@@ -12,7 +12,7 @@ export default function getFandom({ region, loc }) {
 		sameState: t.state === region
 	}));
 	result.sort((a, b) => descending(a.sameState, b.sameState) || ascending(a.dist, b.dist))
-	console.log({ region, lat, lng, result });
+	// console.log({ region, lat, lng, result });
 	const match = result.find(d => d.dist * MILES_PER_DEGREE < 20);
 
 	return match || result[0];
