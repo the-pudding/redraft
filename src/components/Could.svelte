@@ -182,6 +182,7 @@
     height: 3.5em;
     border-radius: 50%;
     outline: calc(var(--border-size) * 0.5) solid var(--color-fg);
+    overflow: hidden;
   }
 
   .downgrade .headshot {
@@ -218,7 +219,6 @@
   .headshot img {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
     filter: grayscale(100%);
   }
 

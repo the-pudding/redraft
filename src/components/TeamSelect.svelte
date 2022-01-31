@@ -5,7 +5,10 @@
   teams.sort((a, b) => ascending(a.mascot, b.mascot));
   export let team = {};
   export let fan;
-  let value = fan;
+
+  let value;
+
+  $: value = fan;
 
   $: match = teams.find((t) => t.abbr === value) || {};
   $: team.name = match.name;
