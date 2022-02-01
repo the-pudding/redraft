@@ -25,6 +25,10 @@
 
 <style>
   select {
-    padding: 0 0.5em;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0.25em;
+    font-family: var(--sans);
+    font-weight: var(--extrabold);
   }
 </style>

@@ -56,7 +56,7 @@
             </div>
             <div class="swap">
               <span class="year">{year}</span>
-              <Icon name="arrow-right" />
+              <Icon strokeWidth="3px" name="arrow-right" />
             </div>
             <div class="upgrade">
               <span class="player">
@@ -178,10 +178,10 @@
 
   .headshot {
     display: inline-block;
-    width: 3.5em;
-    height: 3.5em;
+    width: 3.75em;
+    height: 3.75em;
     border-radius: 50%;
-    outline: calc(var(--border-size) * 0.5) solid var(--color-fg);
+    border: calc(var(--border-size) * 0.5) solid var(--color-fg);
     overflow: hidden;
   }
 
@@ -206,12 +206,11 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    transform: translate(0, -25%);
   }
 
   .year {
     display: block;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
     font-weight: var(--bold);
     font-size: 0.75em;
   }
@@ -228,8 +227,8 @@
     }
 
     .headshot {
-      width: 5em;
-      height: 5em;
+      width: 5.25em;
+      height: 5.25em;
     }
 
     li {
