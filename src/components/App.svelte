@@ -59,7 +59,9 @@
       <TeamSelect bind:team={selectedTeam} fan={fan.abbr} />
     </h2>
     <p class="dek">
-      {selectedTeam.city}’s <mark class="alt">actual picks</mark> and the
+      {selectedTeam.city}’{selectedTeam.city.endsWith("s") ? "" : "s"}
+      <mark class="alt">actual picks</mark>
+      and the
       <mark>better players</mark> available.
       <button class="btn-stats" on:click={() => (visibleStats = !visibleStats)}
         >{visibleStats ? "hide" : "show"} stats</button
