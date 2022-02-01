@@ -31,7 +31,7 @@
 
   let rows = data.map((d) => ({
     ...d,
-    name: `${d.name}${d.team !== d.rookie_team ? "*" : ""}`,
+    name: `${d.name}${d.draft_team !== d.team ? "*" : ""}`,
     style: `background-color: ${colors[d.grade]}`
   }));
 

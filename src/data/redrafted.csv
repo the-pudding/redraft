@@ -1,4 +1,4 @@
-id,name,year,pick,team,seasons,games,minutes,rookie_team,VORP,WS,WA,RWAR,VORP_top,WS_top,WA_top,RWAR_top,image
+id,name,year,pick,draft_team,seasons,games,minutes,rookie_team,VORP,WS,WA,RWAR,VORP_top,WS_top,WA_top,RWAR_top,image
 ellispe01,Pervis Ellison,1989,1,SAC,11,474,11593,SAC,4.50,21.90,19.94,9.61,5.60,19.20,18.24,11.47,false
 ferryda01,Danny Ferry,1989,2,LAC,13,917,18133,CLE,4.90,34.70,14.24,12.08,5.30,22.70,13.54,12.03,false
 elliose01,Sean Elliott,1989,3,SAS,12,742,24502,SAS,13.50,55.60,38.44,35.68,11.30,39.70,31.43,29.56,false

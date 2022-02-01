@@ -20,8 +20,8 @@ const clean = data.map((d) => ({
 	name: d.name,
 	minutes: +d.minutes,
 	year: +d.year,
-	team: swapTeam(d.team),
-	rookie_team: swapTeam(d.rookie_team),
+	draft_team: swapTeam(d.draft_team),
+	team: d.rookie_team ? swapTeam(d.rookie_team) : swapTeam(d.draft_team),
 	pick: +d.pick,
 	image: d.image === "true",
 	VORP: +d.minutes >= MINS ? +d.VORP_top : NO_VAL,
@@ -78,12 +78,12 @@ const getUpgrade = (p) => {
 	const players = drafts.get(p.year);
 	const match = players.find(
 		(other) =>
-			!upgraded[`${other.id}${p.rookie_team}`] &&
-			other.rookie_team !== p.rookie_team &&
+			!upgraded[`${other.id}${p.team}`] &&
+			other.team !== p.team &&
 			other.pick > p.pick &&
 			other.norm_blend > p.norm_blend
 	);
-	if (match) upgraded[`${match.id}${p.rookie_team}`] = true;
+	if (match) upgraded[`${match.id}${p.team}`] = true;
 	return match || {};
 };
 
@@ -91,7 +91,7 @@ const getBetterCount = p => {
 	const players = drafts.get(p.year);
 	const matches = players.filter(
 		(other) =>
-			other.rookie_team !== p.rookie_team &&
+			other.team !== p.team &&
 			other.pick > p.pick &&
 			other.norm_blend > p.norm_blend
 	);

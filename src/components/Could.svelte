@@ -7,7 +7,7 @@
 
   export let visible;
 
-  const groupedTeams = groups(data, (d) => d.rookie_team);
+  const groupedTeams = groups(data, (d) => d.team);
   const teams = groupedTeams.map(([abbr, all]) => {
     const withUpgrade = all
       .filter((d) => d.upgrade)
@@ -44,12 +44,12 @@
   <div class="squad">
     <div class="inner">
       <ul>
-        {#each team.players as { id, year, pick, norm_blend, name, upgrade, team, image, rookie_team }}
+        {#each team.players as { id, year, pick, norm_blend, name, upgrade, team, image, team }}
           <li class:visible>
             <div class="downgrade">
               <span class="player">
                 <!-- <span class="pick">#{pick}</span> -->
-                <span class="pick">{rookie_team !== team ? team : ""}</span>
+                <span class="pick">{team !== team ? team : ""}</span>
                 <span class="headshot">
                   <img src="assets/headshots/{image ? id : 'default'}.png" alt="{name} headshot" />
                 </span>
@@ -58,7 +58,7 @@
                 </span>
                 <div class="info">
                   <p class="row"><span>Pick</span><span>#{pick}</span></p>
-                  <p class="row"><span>Team</span><span>{rookie_team}</span></p>
+                  <p class="row"><span>Team</span><span>{team}</span></p>
                   <p class="row">
                     <span>Score</span><span>{Math.round(norm_blend)}</span>
                   </p>
@@ -83,7 +83,7 @@
                 </span>
                 <div class="info">
                   <p class="row"><span>Pick</span><span>#{upgrade.pick}</span></p>
-                  <p class="row"><span>Team</span><span>{upgrade.rookie_team}</span></p>
+                  <p class="row"><span>Team</span><span>{upgrade.team}</span></p>
                   <p class="row">
                     <span>Score</span><span>{Math.round(upgrade.norm_blend)}</span>
                   </p>
