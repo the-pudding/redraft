@@ -36,20 +36,20 @@
   //   const n = t.players.filter((d) => !d.image);
   //   n.forEach((d) => console.log(d.id, d.name));
   // });
-  $: team = teams.find((d) => d.abbr === selectedTeam.abbr);
-  $: if (team) visible = false;
+  $: currentTeam = teams.find((d) => d.abbr === selectedTeam.abbr);
+  $: if (currentTeam) visible = false;
 </script>
 
 <figure>
   <div class="squad">
     <div class="inner">
       <ul>
-        {#each team.players as { id, year, pick, norm_blend, name, upgrade, team, image, team }}
+        {#each currentTeam.players as { id, year, pick, norm_blend, name, upgrade, image, draft_team, team }}
           <li class:visible>
             <div class="downgrade">
               <span class="player">
                 <!-- <span class="pick">#{pick}</span> -->
-                <span class="pick">{team !== team ? team : ""}</span>
+                <!-- <span class="pick">{draft_team !== team ? draft_team : ""}</span> -->
                 <span class="headshot">
                   <img src="assets/headshots/{image ? id : 'default'}.png" alt="{name} headshot" />
                 </span>
