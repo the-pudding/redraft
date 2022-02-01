@@ -84,6 +84,10 @@
     <p>
       {@html copy.teams1}
     </p>
+
+    <p>
+      {@html copy.teams2}
+    </p>
   </div>
 </section>
 
@@ -123,5 +127,9 @@
   .dek {
     font-size: 1em;
     color: var(--color-gray-500);
+  }
+
+  :global(.prose em) {
+    font-size: 0.85em;
   }
 </style>

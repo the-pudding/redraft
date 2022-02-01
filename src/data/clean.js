@@ -21,6 +21,7 @@ const clean = data.map((d) => ({
 	minutes: +d.minutes,
 	year: +d.year,
 	team: swapTeam(d.team),
+	rookie_team: swapTeam(d.rookie_team),
 	pick: +d.pick,
 	image: d.image === "true",
 	VORP: +d.minutes >= MINS ? +d.VORP_top : NO_VAL,
