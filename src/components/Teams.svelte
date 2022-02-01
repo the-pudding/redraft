@@ -8,7 +8,7 @@
 
   const first = data.filter((d) => d.pick <= 30);
 
-  const grouped = groups(first, (d) => d.team);
+  const grouped = groups(first, (d) => d.rookie_team || d.team);
   const teams = grouped.map(([abbr, players]) => ({
     abbr,
     players,
@@ -49,7 +49,11 @@
           </button>
         </div>
         <div class="below">
-          <Report data={data.filter((d) => d.team === abbr && d.pick <= 30)} />
+          <Report
+            data={data.filter(
+              (d) => (d.rookie_team ? d.rookie_team === abbr : d.team === abbr) && d.pick <= 30
+            )}
+          />
         </div>
       </li>
     {/each}
@@ -73,11 +77,11 @@
   }
 
   .team:nth-of-type(even) .above {
-    background-color: var(--color-gray-50);
+    background-color: var(--color-gray-100);
   }
 
   .team:nth-of-type(odd) .above {
-    background-color: var(--color-gray-100);
+    background-color: var(--color-gray-200);
   }
 
   .above {

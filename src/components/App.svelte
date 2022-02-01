@@ -17,6 +17,7 @@
   let location;
   let selectedTeam = {};
   let fan = { name: "New York Knicks", abbr: "NYK", city: "New York" };
+  let visibleStats;
 
   $: if (location) fan = getFandom(location) || fan;
 
@@ -60,10 +61,13 @@
     <p class="dek">
       {selectedTeam.city}’s <mark class="alt">actual picks</mark> and the
       <mark>better players</mark> available.
+      <button class="btn-stats" on:click={() => (visibleStats = !visibleStats)}
+        >{visibleStats ? "hide" : "show"} stats</button
+      >
     </p>
   </div>
   {#if selectedTeam.name}
-    <Could {data} {selectedTeam} />
+    <Could visible={visibleStats} {data} {selectedTeam} />
   {/if}
   <div class="prose">
     <p>
@@ -131,5 +135,10 @@
 
   :global(.prose em) {
     font-size: 0.85em;
+  }
+
+  .btn-stats {
+    margin-left: 0.5em;
+    width: 7em;
   }
 </style>

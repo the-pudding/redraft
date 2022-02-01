@@ -78,12 +78,12 @@ const getUpgrade = (p) => {
 	const players = drafts.get(p.year);
 	const match = players.find(
 		(other) =>
-			!upgraded[`${other.id}${p.team}`] &&
-			other.team !== p.team &&
+			!upgraded[`${other.id}${p.rookie_team}`] &&
+			other.rookie_team !== p.rookie_team &&
 			other.pick > p.pick &&
 			other.norm_blend > p.norm_blend
 	);
-	if (match) upgraded[`${match.id}${p.team}`] = true;
+	if (match) upgraded[`${match.id}${p.rookie_team}`] = true;
 	return match || {};
 };
 
@@ -91,7 +91,7 @@ const getBetterCount = p => {
 	const players = drafts.get(p.year);
 	const matches = players.filter(
 		(other) =>
-			other.team !== p.team &&
+			other.rookie_team !== p.rookie_team &&
 			other.pick > p.pick &&
 			other.norm_blend > p.norm_blend
 	);

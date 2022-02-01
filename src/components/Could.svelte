@@ -5,7 +5,9 @@
   export let metric = "norm_blend";
   export let selectedTeam;
 
-  const groupedTeams = groups(data, (d) => d.team);
+  export let visible;
+
+  const groupedTeams = groups(data, (d) => d.rookie_team);
   const teams = groupedTeams.map(([abbr, all]) => {
     const withUpgrade = all
       .filter((d) => d.upgrade)
@@ -35,23 +37,32 @@
   //   n.forEach((d) => console.log(d.id, d.name));
   // });
   $: team = teams.find((d) => d.abbr === selectedTeam.abbr);
+  $: if (team) visible = false;
 </script>
 
 <figure>
   <div class="squad">
     <div class="inner">
       <ul>
-        {#each team.players as { id, year, pick, norm_blend, name, upgrade, image }}
-          <li>
+        {#each team.players as { id, year, pick, norm_blend, name, upgrade, team, image, rookie_team }}
+          <li class:visible>
             <div class="downgrade">
               <span class="player">
+                <!-- <span class="pick">#{pick}</span> -->
+                <span class="pick">{rookie_team !== team ? team : ""}</span>
                 <span class="headshot">
                   <img src="assets/headshots/{image ? id : 'default'}.png" alt="{name} headshot" />
                 </span>
                 <span class="name">
-                  <!-- #{pick} -->
                   {name}
                 </span>
+                <div class="info">
+                  <p class="row"><span>Pick</span><span>#{pick}</span></p>
+                  <p class="row"><span>Team</span><span>{rookie_team}</span></p>
+                  <p class="row">
+                    <span>Score</span><span>{Math.round(norm_blend)}</span>
+                  </p>
+                </div>
               </span>
             </div>
             <div class="swap">
@@ -60,6 +71,7 @@
             </div>
             <div class="upgrade">
               <span class="player">
+                <!-- <span class="pick">#{upgrade.pick}</span> -->
                 <span class="headshot">
                   <img
                     src="assets/headshots/{upgrade.image ? upgrade.id : 'default'}.png"
@@ -67,9 +79,15 @@
                   />
                 </span>
                 <span class="name">
-                  <!-- #{upgrade.pick} -->
                   {upgrade.name}
                 </span>
+                <div class="info">
+                  <p class="row"><span>Pick</span><span>#{upgrade.pick}</span></p>
+                  <p class="row"><span>Team</span><span>{upgrade.rookie_team}</span></p>
+                  <p class="row">
+                    <span>Score</span><span>{Math.round(upgrade.norm_blend)}</span>
+                  </p>
+                </div>
               </span>
             </div>
           </li>
@@ -161,7 +179,9 @@
     font-size: 0.9em;
     line-height: 1;
     width: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
+    position: relative;
+    user-select: none;
   }
 
   li span {
@@ -174,6 +194,31 @@
     padding: 0 0.5em;
     width: 9em;
     align-items: center;
+    position: relative;
+  }
+
+  .info {
+    width: 100%;
+    display: none;
+  }
+
+  .visible .info {
+    display: block;
+  }
+
+  .info .row {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-gray-100);
+    padding: 0.25em;
+    margin: 0;
+    line-height: 1;
+    margin-bottom: 2px;
+    font-size: 14px;
+  }
+
+  .info .row:nth-of-type(even) {
+    background-color: var(--color-gray-200);
   }
 
   .headshot {
@@ -183,6 +228,15 @@
     border-radius: 50%;
     border: calc(var(--border-size) * 0.5) solid var(--color-fg);
     overflow: hidden;
+  }
+
+  .pick {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(2.5em);
+    color: var(--color-gray-500);
+    font-size: 14px;
   }
 
   .downgrade .headshot {
@@ -201,11 +255,15 @@
   }
 
   .swap {
+    position: absolute;
+    top: 1em;
+    left: 50%;
     font-size: 1.25em;
     color: var(--color-gray-400);
     align-items: center;
     display: flex;
     flex-direction: column;
+    transform: translate(-50%, 0);
   }
 
   .year {
@@ -235,7 +293,7 @@
       padding: 1em;
       font-size: 1em;
       width: 50%;
-      justify-content: flex-start;
+      justify-content: space-between;
     }
 
     .team {
@@ -252,7 +310,7 @@
     }
 
     .swap {
-      transform: translateY(-50%);
+      top: 2em;
     }
   }
 </style>
