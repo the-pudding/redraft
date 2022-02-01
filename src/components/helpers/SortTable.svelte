@@ -109,4 +109,16 @@
     content: "▼";
     visibility: visible;
   }
+
+  @media only screen and (max-width: 480px) {
+    td:nth-of-type(3),
+    th:nth-of-type(3) {
+      width: 5em;
+    }
+
+    td:last-of-type,
+    th:last-of-type {
+      display: none;
+    }
+  }
 </style>
