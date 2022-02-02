@@ -59,7 +59,9 @@
       <TeamSelect bind:team={selectedTeam} fan={fan.abbr} />
     </h2>
     <p class="dek">
-      {selectedTeam.city}’{selectedTeam.city.endsWith("s") ? "" : "s"}
+      {#if selectedTeam.city}
+        {selectedTeam.city}’{selectedTeam.city.endsWith("s") ? "" : "s"}
+      {/if}
       <mark class="alt">actual picks</mark>
       and the
       <mark>better players</mark> available.

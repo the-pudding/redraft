@@ -10,7 +10,7 @@
   const groupedTeams = groups(data, (d) => d.team);
   const teams = groupedTeams.map(([abbr, all]) => {
     const withUpgrade = all
-      .filter((d) => d.upgrade)
+      .filter((d) => d.upgrade && d.team === d.draft_team)
       .map((d) => ({
         ...d,
         upgrade: data.find((v) => v.id === d.upgrade)
@@ -60,7 +60,7 @@
                   <p class="row"><span>Pick</span><span>#{pick}</span></p>
                   <p class="row"><span>Team</span><span>{team}</span></p>
                   <p class="row">
-                    <span>Score</span><span>{Math.round(norm_blend)}</span>
+                    <span>Rating</span><span>{Math.round(norm_blend)}</span>
                   </p>
                 </div>
               </span>
@@ -85,7 +85,7 @@
                   <p class="row"><span>Pick</span><span>#{upgrade.pick}</span></p>
                   <p class="row"><span>Team</span><span>{upgrade.team}</span></p>
                   <p class="row">
-                    <span>Score</span><span>{Math.round(upgrade.norm_blend)}</span>
+                    <span>Rating</span><span>{Math.round(upgrade.norm_blend)}</span>
                   </p>
                 </div>
               </span>

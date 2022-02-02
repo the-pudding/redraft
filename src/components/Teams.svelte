@@ -68,7 +68,7 @@
 
   .team {
     list-style: none;
-    margin: 0.25em;
+    border-bottom: 0.25em solid var(--color-bg);
     line-height: 1;
   }
 

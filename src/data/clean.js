@@ -98,7 +98,24 @@ const getBetterCount = p => {
 	return matches.length;
 };
 
+const getTrade = (p) => {
+	if (p.draft_team === p.team) return p.pick;
+	const players = drafts.get(p.year);
+	const matches = players.filter(
+		(other) =>
+			other.id !== p.id &&
+			other.team === p.draft_team &&
+			other.pick < p.pick &&
+			other.draft_team === p.team
+	);
+	return matches.length ? (matches[matches.length - 1]).pick : p.pick;
+};
+
 const upgraded = {};
+
+// clean.forEach(d => {
+// 	d.trade = getTrade(d);
+// });
 
 clean.forEach(d => {
 	const u = getUpgrade(d);
