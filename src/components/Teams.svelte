@@ -1,4 +1,5 @@
 <script>
+  import { tick } from "svelte";
   import { extent, scaleLinear, max, mean, group, groups, ascending, descending } from "d3";
   import Report from "$components/Report.svelte";
   import Icon from "$components/helpers/Icon.svelte";
@@ -23,18 +24,26 @@
   teams.sort((a, b) => descending(a.pct_correct, b.pct_correct)) || ascending(a.abbr, b.abbr);
 
   let activeTeam;
+
+  const onClick = async (abbr) => {
+    activeTeam = activeTeam === abbr ? undefined : abbr;
+    await tick();
+    const el = document.querySelector(`li.team--${abbr}`);
+    const { top } = el.getBoundingClientRect();
+    window.scrollTo(0, window.scrollY + top - 40);
+  };
 </script>
 
 <figure>
   <ul>
     {#each teams as { abbr, players, pct_correct }, i}
-      <li class="team" style="--pct: {x(pct_correct)}%;" class:visible={activeTeam === abbr}>
+      <li
+        class="team team--{abbr}"
+        style="--pct: {x(pct_correct)}%;"
+        class:visible={activeTeam === abbr}
+      >
         <div class="above">
-          <button
-            on:click={() => {
-              activeTeam = activeTeam === abbr ? undefined : abbr;
-            }}
-          >
+          <button on:click={() => onClick(abbr)}>
             <img src="assets/logos/{abbr.toLowerCase()}.svg" alt="{abbr} logo" />
             <span class="mascot"
               >{mascot(abbr)}

@@ -1,5 +1,6 @@
 <script context="module">
   export const prerender = true;
+  import copy from "$data/doc.json";
 </script>
 
 <script>
@@ -7,5 +8,5 @@
   import App from "$components/App.svelte";
 </script>
 
-<Meta />
+<Meta title={copy.title} description={copy.description} url={copy.url} />
 <App />

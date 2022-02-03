@@ -11,7 +11,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="description" content={description} />
   <meta name="author" content="The Pudding" />
-  <meta name="news_keywords" content="" />
+  <meta name="news_keywords" content="nba, basketball, draft, redraft" />
 
   <meta property="og:title" content={title} />
   <meta property="og:site_name" content="The Pudding" />

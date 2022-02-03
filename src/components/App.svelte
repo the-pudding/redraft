@@ -31,7 +31,7 @@
   });
 </script>
 
-<WIP />
+<!-- <WIP /> -->
 <section id="intro">
   <div class="prose">
     <h1>The NBA Redrafted <mark>2.0</mark></h1>
