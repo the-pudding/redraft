@@ -175,12 +175,12 @@
 
   .bin:nth-of-type(1),
   .bin:nth-of-type(5) {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .bin:nth-of-type(2),
   .bin:nth-of-type(4) {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .bin:nth-of-type(3) {
@@ -226,6 +226,21 @@
 
     p {
       width: 100%;
+    }
+
+    .bin:nth-of-type(1),
+    .bin:nth-of-type(5) {
+      font-size: 20px;
+    }
+
+    .bin:nth-of-type(2),
+    .bin:nth-of-type(4) {
+      font-size: 15px;
+    }
+
+    .bin:nth-of-type(3) {
+      display: none;
+      font-size: 10px;
     }
   }
 </style>
