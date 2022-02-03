@@ -124,4 +124,8 @@ mark.alt {
 	.prose p {
 		font-size: 1.5em;
 	}
+
+	#method .prose p {
+		font-size: 1em;
+	}
 }

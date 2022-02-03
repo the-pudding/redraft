@@ -123,16 +123,12 @@
 <Footer />
 
 <style>
-  #method .prose p {
-    font-size: 1.25em;
-  }
-
   .byline {
     font-size: 1em;
     color: var(--color-gray-500);
   }
 
-  .dek {
+  :global(.prose p.dek) {
     font-size: 1em;
     color: var(--color-gray-500);
   }
