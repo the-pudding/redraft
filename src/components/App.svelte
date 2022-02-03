@@ -1,7 +1,7 @@
 <script>
   import { onMount, setContext } from "svelte";
   import { writable } from "svelte/store";
-  import WIP from "$components/helpers/WIP.svelte";
+
   import Could from "$components/Could.svelte";
   import Histogram from "$components/Histogram.svelte";
   import Teams from "$components/Teams.svelte";
@@ -142,7 +142,17 @@
   }
 
   .btn-stats {
-    margin-left: 0.5em;
+    border: 2px solid var(--color-fg);
+    padding: 0.25em;
+    margin-top: 0.25em;
     width: 7em;
+  }
+
+  @media only screen and (min-width: 480px) {
+    .btn-stats {
+      margin-left: 0.5em;
+      padding: 0.5em;
+      display: inline-block;
+    }
   }
 </style>

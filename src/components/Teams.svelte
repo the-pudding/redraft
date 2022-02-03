@@ -69,7 +69,7 @@
   figure {
     position: relative;
     padding: 0;
-    padding-right: 2em;
+    padding-right: 2.5em;
     width: 100%;
     max-width: 60em;
     margin: 4em auto;
@@ -113,7 +113,7 @@
 
   .team:hover .percent {
     color: var(--color-fg);
-    transform: translate(100%, -50%) scale(1.5);
+    transform: translate(100%, -50%) scale(1.25);
   }
 
   .team:hover .percent-first {

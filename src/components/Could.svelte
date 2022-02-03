@@ -109,8 +109,9 @@
 
 <style>
   figure {
-    margin: 4em auto;
+    margin: 2em auto 4em auto;
     min-height: 320px;
+    padding: 0 0.5em;
   }
 
   .squad {
@@ -175,7 +176,8 @@
   li {
     display: flex;
     align-items: center;
-    padding: 0.25em 0;
+    padding: 0;
+    padding-bottom: 0.25em;
     font-size: 0.9em;
     line-height: 1;
     width: 100%;
