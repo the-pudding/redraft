@@ -93,8 +93,9 @@
 
   th.is-sortable button:after {
     content: "–";
+    width: 1em;
     display: inline-block;
-    text-align: center;
+    text-align: left;
     margin-left: 0.5em;
     font-family: monospace;
     vertical-align: middle;
@@ -111,9 +112,13 @@
   }
 
   @media only screen and (max-width: 480px) {
+    table {
+      font-size: 14px;
+    }
+
     td:nth-of-type(3),
     th:nth-of-type(3) {
-      width: 5em;
+      width: 5.5em;
     }
 
     td:last-of-type,

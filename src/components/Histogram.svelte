@@ -78,7 +78,7 @@
 
   h3 {
     text-align: center;
-    margin-bottom: 2em;
+    margin: 0;
   }
 
   .drafts {
@@ -154,11 +154,11 @@
   }
 
   .bin:nth-of-type(1):before {
-    content: "⬇ 20 spots";
+    content: "▼ 20 spots";
   }
 
   .bin:nth-of-type(2):before {
-    content: "⬇ 10 spots";
+    content: "▼ 10 spots";
   }
 
   .bin:nth-of-type(3):before {
@@ -166,11 +166,11 @@
   }
 
   .bin:nth-of-type(4):before {
-    content: "⬆ 10 spots";
+    content: "▲ 10 spots";
   }
 
   .bin:nth-of-type(5):before {
-    content: "⬆ 20 spots";
+    content: "▲ 20 spots";
   }
 
   .bin:nth-of-type(1),
@@ -189,6 +189,10 @@
   }
 
   @media only screen and (min-width: 1024px) {
+    h3 {
+      margin-bottom: 2em;
+    }
+
     .bins {
       flex-direction: row;
       align-items: flex-start;
