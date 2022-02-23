@@ -206,11 +206,6 @@
       flex-wrap: wrap;
     }
 
-    .bin:nth-of-type(3) {
-      display: flex;
-      width: 20em;
-    }
-
     .bin:nth-of-type(3) p {
       width: calc(50% - 0.5em);
     }
@@ -243,8 +238,9 @@
     }
 
     .bin:nth-of-type(3) {
-      display: none;
-      font-size: 10px;
+      display: flex;
+      width: 20em;
+      font-size: 12px;
     }
   }
 </style>

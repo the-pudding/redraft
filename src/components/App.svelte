@@ -103,6 +103,7 @@
 <section id="histogram">
   <div class="prose">
     <h2>{@html copy.histogramTitle}</h2>
+    <p class="dek">{@html copy.histogramDek}</p>
   </div>
   <Histogram {data} />
   <div class="prose">
