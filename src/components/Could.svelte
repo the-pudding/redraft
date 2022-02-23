@@ -232,15 +232,6 @@
     overflow: hidden;
   }
 
-  .pick {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(2.5em);
-    color: var(--color-gray-500);
-    font-size: 14px;
-  }
-
   .downgrade .headshot {
     background: var(--color-red-light);
   }

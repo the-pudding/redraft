@@ -16,7 +16,7 @@
   $: team.city = match.city;
 </script>
 
-<select bind:value>
+<select aria-label="team" bind:value>
   <option value="" />
   {#each teams as { abbr, mascot }}
     <option value={abbr}>{mascot}</option>

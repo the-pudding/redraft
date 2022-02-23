@@ -134,7 +134,7 @@
 
   .percent,
   .percent-first {
-    color: var(--color-gray-500);
+    color: var(--color-gray-600);
     font-size: 14px;
     display: none;
     position: absolute;

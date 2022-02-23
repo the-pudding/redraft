@@ -125,12 +125,12 @@
 <style>
   .byline {
     font-size: 1em;
-    color: var(--color-gray-500);
+    color: var(--color-gray-600);
   }
 
   :global(.prose p.dek) {
     font-size: 1em;
-    color: var(--color-gray-500);
+    color: var(--color-gray-600);
   }
 
   :global(.prose em) {

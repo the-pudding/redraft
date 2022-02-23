@@ -23,7 +23,7 @@
 	--font-form: var(--sans);
 	--color-bg: var(--color-white);
 	--color-fg: var(--color-gray-900);
-	--color-placeholder: var(--color-gray-500);
+	--color-placeholder: var(--color-gray-600);
   --color-link: var(--color-green);
   --color-focus: var(--color-red);
   --color-form-bg: var(--color-gray-100);

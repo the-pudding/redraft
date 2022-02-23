@@ -42,7 +42,7 @@
 
 <div class="ui">
   <div class="range">
-    <Range {min} {max} showTicks={true} step={1} bind:value={activeYear} />
+    <Range label="year" {min} {max} showTicks={true} step={1} bind:value={activeYear} />
   </div>
 </div>
 
