@@ -1,331 +1,271 @@
 [
 	{
 		"longitude": -71.062228,
-		"stadium": "TD Garden",
 		"latitude": 42.366303,
 		"name": "Boston Celtics",
 		"mascot": "Celtics",
 		"city": "Boston",
 		"abbr": "BOS",
-		"state": "Massachusetts",
-		"id": 1
+		"state": "Massachusetts"
 	},
 	{
 		"longitude": -87.918167,
-		"stadium": "Fiserv Forum",
 		"latitude": 43.045028,
 		"name": "Milwaukee Bucks",
 		"mascot": "Bucks",
 		"city": "Milwaukee",
 		"abbr": "MIL",
-		"state": "Wisconsin",
-		"id": 10
+		"state": "Wisconsin"
 	},
 	{
 		"longitude": -84.396389,
-		"stadium": "Philips Arena",
 		"latitude": 33.757222,
 		"name": "Atlanta Hawks",
 		"mascot": "Hawks",
 		"city": "Atlanta",
 		"abbr": "ATL",
-		"state": "Georgia",
-		"id": 11
+		"state": "Georgia"
 	},
 	{
 		"longitude": -80.839167,
-		"stadium": "Time Warner Cable Arena",
 		"latitude": 35.225,
-		"name": "Charlotte Bobcats",
-		"mascot": "Bobcats",
+		"name": "Charlotte Hornets",
+		"mascot": "Hornets",
 		"city": "Charlotte",
 		"abbr": "CHA",
-		"state": "North Carolina",
-		"id": 12
+		"state": "North Carolina"
 	},
 	{
 		"longitude": -80.188056,
-		"stadium": "American Airlines Arena",
 		"latitude": 25.781389,
 		"name": "Miami Heat",
 		"mascot": "Heat",
 		"city": "Miami",
 		"abbr": "MIA",
-		"state": "Florida",
-		"id": 13
+		"state": "Florida"
 	},
 	{
 		"longitude": -81.383963,
-		"stadium": "Amway Center",
 		"latitude": 28.539338,
 		"name": "Orlando Magic",
 		"mascot": "Magic",
 		"city": "Orlando",
 		"abbr": "ORL",
-		"state": "Florida",
-		"id": 14
+		"state": "Florida"
 	},
 	{
 		"longitude": -77.020833,
-		"stadium": "Verizon Center",
 		"latitude": 38.898056,
 		"name": "Washington Wizards",
 		"mascot": "Wizards",
 		"city": "Washington",
 		"abbr": "WAS",
-		"state": "Washington DC",
-		"id": 15
+		"state": "Washington DC"
 	},
 	{
 		"longitude": -105.0075,
-		"stadium": "Pepsi Center",
 		"latitude": 39.748611,
 		"name": "Denver Nuggets",
 		"mascot": "Nuggets",
 		"city": "Denver",
 		"abbr": "DEN",
-		"state": "Colorado",
-		"id": 16
+		"state": "Colorado"
 	},
 	{
 		"longitude": -93.276111,
-		"stadium": "Target Center",
 		"latitude": 44.979444,
 		"name": "Minnesota Timberwolves",
 		"mascot": "Timberwolves",
 		"city": "Minnesota",
 		"abbr": "MIN",
-		"state": "Minnesota",
-		"id": 17
+		"state": "Minnesota"
 	},
 	{
 		"longitude": -122.666667,
-		"stadium": "Rose Garden",
 		"latitude": 45.531667,
 		"name": "Portland Trail Blazers",
 		"mascot": "Trail Blazers",
 		"city": "Portland",
 		"abbr": "POR",
-		"state": "Oregon",
-		"id": 18
+		"state": "Oregon"
 	},
 	{
 		"longitude": -97.515,
-		"stadium": "Oklahoma City Arena",
 		"latitude": 35.463333,
 		"name": "Oklahoma City Thunder",
 		"mascot": "Thunder",
 		"city": "Oklahoma City",
 		"abbr": "OKC",
-		"state": "Oklahoma",
-		"id": 19
+		"state": "Oklahoma"
 	},
 	{
 		"longitude": -73.9754156,
-		"stadium": "Barclays Center",
 		"latitude": 40.6826465,
 		"name": "Brooklyn Nets",
 		"mascot": "Nets",
 		"city": "Brooklyn",
 		"abbr": "BRK",
-		"state": "New York",
-		"id": 2
+		"state": "New York"
 	},
 	{
 		"longitude": -111.901111,
-		"stadium": "EnergySolutions Arena",
 		"latitude": 40.768333,
 		"name": "Utah Jazz",
 		"mascot": "Jazz",
 		"city": "Utah",
 		"abbr": "UTA",
-		"state": "Utah",
-		"id": 20
+		"state": "Utah"
 	},
 	{
 		"longitude": -122.3875,
-		"stadium": "Chase Center",
 		"latitude": 37.768056,
 		"name": "Golden State Warriors",
 		"mascot": "Warriors",
 		"city": "Golden State",
 		"abbr": "GSW",
-		"state": "California",
-		"id": 21
+		"state": "California"
 	},
 	{
 		"longitude": -118.267222,
-		"stadium": "Staples Center",
 		"latitude": 34.043056,
 		"name": "Los Angeles Clippers",
 		"mascot": "Clippers",
 		"city": "Los Angeles",
 		"abbr": "LAC",
-		"state": "California",
-		"id": 22
+		"state": "California"
 	},
 	{
 		"longitude": -118.267222,
-		"stadium": "Staples Center",
 		"latitude": 34.043056,
 		"name": "Los Angeles Lakers",
 		"mascot": "Lakers",
 		"city": "Los Angeles",
 		"abbr": "LAL",
-		"state": "California",
-		"id": 23
+		"state": "California"
 	},
 	{
 		"longitude": -112.071389,
-		"stadium": "US Airways Center",
 		"latitude": 33.445833,
 		"name": "Phoenix Suns",
 		"mascot": "Suns",
 		"city": "Phoenix",
 		"abbr": "PHO",
-		"state": "Arizona",
-		"id": 24
+		"state": "Arizona"
 	},
 	{
 		"longitude": -121.499611,
-		"stadium": "Golden 1 Center",
 		"latitude": 38.580361,
 		"name": "Sacramento Kings",
 		"mascot": "Kings",
 		"city": "Sacramento",
 		"abbr": "SAC",
-		"state": "California",
-		"id": 25
+		"state": "California"
 	},
 	{
 		"longitude": -96.810278,
-		"stadium": "American Airlines Center",
 		"latitude": 32.790556,
 		"name": "Dallas Mavericks",
 		"mascot": "Mavericks",
 		"city": "Dallas",
 		"abbr": "DAL",
-		"state": "Texas",
-		"id": 26
+		"state": "Texas"
 	},
 	{
 		"longitude": -95.362222,
-		"stadium": "Toyota Center",
 		"latitude": 29.750833,
 		"name": "Houston Rockets",
 		"mascot": "Rockets",
 		"city": "Houston",
 		"abbr": "HOU",
-		"state": "Texas",
-		"id": 27
+		"state": "Texas"
 	},
 	{
 		"longitude": -90.050556,
-		"stadium": "FedExForum",
 		"latitude": 35.138333,
 		"name": "Memphis Grizzlies",
 		"mascot": "Grizzlies",
 		"city": "Memphis",
 		"abbr": "MEM",
-		"state": "Tennessee",
-		"id": 28
+		"state": "Tennessee"
 	},
 	{
 		"longitude": -90.081944,
-		"stadium": "New Orleans Arena",
 		"latitude": 29.948889,
 		"name": "New Orleans Pelicans",
 		"mascot": "Pelicans",
 		"city": "New Orleans",
-		"abbr": "NOP",
-		"id": 29
+		"abbr": "NOP"
 	},
 	{
 		"longitude": -73.993611,
-		"stadium": "Madison Square Garden",
 		"latitude": 40.750556,
 		"name": "New York Knicks",
 		"mascot": "Knicks",
 		"city": "New York",
 		"abbr": "NYK",
-		"state": "New York",
-		"id": 3
+		"state": "New York"
 	},
 	{
 		"longitude": -98.4375,
-		"stadium": "AT&T Center",
 		"latitude": 29.426944,
 		"name": "San Antonio Spurs",
 		"mascot": "Spurs",
 		"city": "San Antonio",
 		"abbr": "SAS",
-		"state": "Texas",
-		"id": 30
+		"state": "Texas"
 	},
 	{
 		"longitude": -75.171944,
-		"stadium": "Wells Fargo Center",
 		"latitude": 39.901111,
 		"name": "Philadelphia 76ers",
 		"mascot": "76ers",
 		"city": "Philadelphia",
 		"abbr": "PHI",
-		"state": "Pennsylvania",
-		"id": 4
+		"state": "Pennsylvania"
 	},
 	{
 		"longitude": -79.379167,
-		"stadium": "Air Canada Centre",
 		"latitude": 43.643333,
 		"name": "Toronto Raptors",
 		"mascot": "Raptors",
 		"city": "Toronto",
 		"abbr": "TOR",
-		"state": "Ontario",
-		"id": 5
+		"state": "Ontario"
 	},
 	{
 		"longitude": -87.674167,
-		"stadium": "United Center",
 		"latitude": 41.880556,
 		"name": "Chicago Bulls",
 		"mascot": "Bulls",
 		"city": "Chicago",
 		"abbr": "CHI",
-		"state": "Illinois",
-		"id": 6
+		"state": "Illinois"
 	},
 	{
 		"longitude": -81.688056,
-		"stadium": "Quicken Loans Arena",
 		"latitude": 41.496389,
 		"name": "Cleveland Cavaliers",
 		"mascot": "Cavaliers",
 		"city": "Cleveland",
 		"abbr": "CLE",
-		"state": "Ohio",
-		"id": 7
+		"state": "Ohio"
 	},
 	{
 		"longitude": -83.055,
-		"stadium": "Little Caesars Arena",
 		"latitude": 42.341111,
 		"name": "Detroit Pistons",
 		"mascot": "Pistons",
 		"city": "Detroit",
 		"abbr": "DET",
-		"state": "Michigan",
-		"id": 8
+		"state": "Michigan"
 	},
 	{
 		"longitude": -86.155556,
-		"stadium": "Conseco Fieldhouse",
 		"latitude": 39.763889,
 		"name": "Indiana Pacers",
 		"mascot": "Pacers",
 		"city": "Indiana",
 		"abbr": "IND",
-		"state": "Indiana",
-		"id": 9
+		"state": "Indiana"
 	}
 ]
