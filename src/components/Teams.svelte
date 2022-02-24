@@ -1,6 +1,6 @@
 <script>
   import { tick } from "svelte";
-  import { extent, scaleLinear, max, mean, group, groups, ascending, descending } from "d3";
+  import { extent, scaleLinear, max, mean, group, groups, ascending, descending, format } from "d3";
   import Report from "$components/Report.svelte";
   import Icon from "$components/helpers/Icon.svelte";
   import { mascot } from "$utils/teamLookup.js";
@@ -51,10 +51,10 @@
             >
             {#if i === 0}
               <span class="percent-first"
-                >pick the best player {Math.round(pct_correct * 100)}% of the time</span
+                >pick the best player {format(".1%")(pct_correct)} of the time</span
               >
             {/if}
-            <span class="percent">{Math.round(pct_correct * 100)}%</span>
+            <span class="percent">{format(".1%")(pct_correct).replace("%", "")}</span>
           </button>
         </div>
         <div class="below">
