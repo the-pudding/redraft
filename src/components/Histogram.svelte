@@ -72,7 +72,7 @@
 
   .range {
     width: 90%;
-    max-width: 30em;
+    max-width: 40rem;
     margin: 2em auto;
   }
 
