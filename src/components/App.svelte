@@ -36,9 +36,8 @@
   <div class="prose">
     <h1>The NBA Redrafted <mark>2.0</mark></h1>
     <p class="byline">
-      By <a href="https://pudding.cool/authors/russell-goldenberg" target="_blank"
-        >Russell Goldenberg</a
-      > | Feb. 2022
+      By <a href="https://pudding.cool/author/russell-samora" target="_blank">Russell Samora</a> | Feb.
+      2022
     </p>
     <p>
       {@html copy.intro1}
